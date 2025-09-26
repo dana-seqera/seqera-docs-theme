@@ -1,0 +1,20 @@
+# Build outputs
+build/
+dist/
+.docusaurus/
+node_modules/
+
+# Generated files
+*.min.js
+*.bundle.js
+
+# Logs
+*.log
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# Other
+.env
+coverage/
