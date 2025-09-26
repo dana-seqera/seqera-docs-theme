@@ -1,5 +1,6 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
+import "dotenv/config";
 import type * as Preset from '@docusaurus/preset-classic';
 import type * as Plugin from '@docusaurus/types/src/plugin';
 import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs';
@@ -92,16 +93,22 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/favicon--dynamic.svg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'Seqera Docs',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Seqera',
+        src: 'img/Logo.svg',
+        srcDark: 'img/LogoWhite.svg',
+        width: '180px',
+        height: '40px',
+        style: {
+          width: '180px',
+          height: '40px',
+        },
       },
       items: [
         {
@@ -161,11 +168,65 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Seqera.io`,
+      copyright: `Copyright © ${new Date().getFullYear()} Seqera`,
     },
+    languageTabs: [
+      {
+        highlight: 'python',
+        language: 'python',
+        logoClass: 'python',
+      },
+      {
+        highlight: 'bash',
+        language: 'curl',
+        logoClass: 'curl',
+      },
+      {
+        highlight: 'java',
+        language: 'java',
+        logoClass: 'java',
+        variant: 'unirest',
+      },
+      {
+        highlight: 'r',
+        language: 'r',
+        logoClass: 'r',
+      },
+      {
+        highlight: 'javascript',
+        language: 'javascript',
+        logoClass: 'javascript',
+      },
+      {
+        highlight: 'go',
+        language: 'go',
+        logoClass: 'go',
+      },
+      {
+        highlight: 'powershell',
+        language: 'powershell',
+        logoClass: 'powershell',
+      },
+    ],
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.oneLight,
+      darkTheme: prismThemes.oneDark,
+           additionalLanguages: [
+          "bash",
+          "docker",
+          "groovy",
+          "ini",
+          "java",
+          "javascript",
+          "json",
+          "nginx",
+          "python",
+          "r",
+          "shell-session",
+          "sql",
+          "typescript",
+          "yaml",
+        ],
     },
     stylesheets: [
       {
