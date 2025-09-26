@@ -1,5 +1,26 @@
-/* Import Tailwind CSS v4 */
-@import "tailwindcss";
+@import "tailwindcss/theme.css" layer(theme);
+
+
+/* We add the .tw-wrapper class to selectively enable Tailwind. We scope tailwind within a class to prevent a very common issue where Tailwind and Infima (Docusaurus styles) are incompatible  */
+@layer base {
+  .tw-wrapper {
+    @import "tailwindcss/preflight.css" layer(base);
+  }
+}
+
+/* This class removes default Infima styles. We can add this in layouts where Tailwind is preferred */
+.remove-infima:not(#a#b) {
+  &,
+  * {
+    @layer docusaurus.infima {
+      all: revert-layer;
+    }
+  }
+}
+
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@custom-variant dark (&:is([data-theme="dark"] *));
 
 /* Content paths */
 @source "src/**/*.jsx";
