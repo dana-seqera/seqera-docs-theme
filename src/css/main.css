@@ -1,66 +1,22 @@
-
-@import "tailwindcss";
-
-@variant dark ([data-theme="dark"] &);
-
-@import url('./fonts/inter.css');
-@import url('./fonts/degular.css');
-@import url('./typography.css');
-
-
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
-:root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
-
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
-
-
-
+/* Import Tailwind CSS v4 */
 @import "tailwindcss";
 
 /* Content paths */
 @source "src/**/*.jsx";
 @source "src/**/*.tsx";
 
-/* Dark mode configuration */
 @variant dark ([data-theme="dark"] &);
 
-/* Custom screens/breakpoints */
-@media sm (width >= 640px);
-@media md (width >= 996px); /* matches docusaurus default breakpoint */
-@media lg (width >= 1024px);
-@media xl (width >= 1280px);
+@breakpoint sm (width >= 640px);
+@breakpoint md (width >= 996px); /* matches docusaurus default breakpoint */
+@breakpoint lg (width >= 1024px);
+@breakpoint xl (width >= 1280px);
 
 /* Font families */
 @theme {
-  --font-title: Degular, Helvetica, sans-serif;
-  --font-display: Inter, Helvetica, sans-serif;
-  --font-body: Inter, Helvetica, sans-serif;
+  --font-family-title: Degular, Helvetica, sans-serif;
+  --font-family-display: Inter, Helvetica, sans-serif;
+  --font-family-body: Inter, Helvetica, sans-serif;
 }
 
 /* Font sizes */
@@ -96,6 +52,7 @@
 /* Colors */
 @theme {
   /* Nextflow colors */
+  --color-nextflow-50: #f0fdf9;
   --color-nextflow-100: #E2F7F3;
   --color-nextflow-200: #B6ECE2;
   --color-nextflow-300: #86E0CE;
@@ -105,10 +62,10 @@
   --color-nextflow-700: #0CAE8E;
   --color-nextflow-800: #0A967B;
   --color-nextflow-900: #087F68;
-  --color-nextflow-1000: #065647;
-  --color-nextflow: #0DC09D;
+  --color-nextflow-950: #065647;
 
   /* Wave colors */
+  --color-wave-50: #f0f9ff;
   --color-wave-100: #E8F2FF;
   --color-wave-200: #C5DFFE;
   --color-wave-300: #9ECAFE;
@@ -118,10 +75,10 @@
   --color-wave-700: #3787E5;
   --color-wave-800: #3074C5;
   --color-wave-900: #2863A7;
-  --color-wave-1000: #1B4372;
-  --color-wave: #3D95FD;
+  --color-wave-950: #1B4372;
 
   /* Fusion colors */
+  --color-fusion-50: #fef2f2;
   --color-fusion-100: #FEEDEC;
   --color-fusion-200: #FED2D0;
   --color-fusion-300: #FDB4B1;
@@ -131,10 +88,10 @@
   --color-fusion-700: #E25E5A;
   --color-fusion-800: #C3514D;
   --color-fusion-900: #A64541;
-  --color-fusion-1000: #712F2C;
-  --color-fusion: #FA6863;
+  --color-fusion-950: #712F2C;
 
   /* MultiQC colors */
+  --color-multiqc-50: #fefaf6;
   --color-multiqc-100: #FDF0E9;
   --color-multiqc-200: #FBD9C8;
   --color-multiqc-300: #F8C0A3;
@@ -144,10 +101,10 @@
   --color-multiqc-700: #DA743F;
   --color-multiqc-800: #BC6437;
   --color-multiqc-900: #A0552F;
-  --color-multiqc-1000: #6C3A20;
-  --color-multiqc: #F18046;
+  --color-multiqc-950: #6C3A20;
 
   /* Brand colors */
+  --color-brand-50: #fafafa;
   --color-brand-100: #F3F3F4;
   --color-brand-200: #E8E7E9;
   --color-brand-300: #D0CFD4;
@@ -157,14 +114,10 @@
   --color-brand-700: #736F7D;
   --color-brand-800: #5C5767;
   --color-brand-900: #453F51;
-  --color-brand-1000: #2D273C;
-  --color-brand-1100: #160F26;
-  --color-brand-1200: #151121;
-  --color-brand-1300: #141024;
-  --color-brand-1400: #110D1D;
-  --color-brand: #160F26;
+  --color-brand-950: #2D273C;
 
   /* Gray colors */
+  --color-gray-50: #fafafa;
   --color-gray-100: #F7F7F7;
   --color-gray-200: #EAEBEB;
   --color-gray-300: #DDDEDE;
@@ -174,9 +127,10 @@
   --color-gray-700: #A8AAAB;
   --color-gray-800: #919393;
   --color-gray-900: #7B7B7B;
-  --color-gray-1000: #545555;
+  --color-gray-950: #545555;
 
   /* Product colors */
+  --color-product-50: #faf9fc;
   --color-product-100: #EAE8F1;
   --color-product-200: #CBC6DD;
   --color-product-300: #A9A1C6;
@@ -186,9 +140,10 @@
   --color-product-700: #4A3C7F;
   --color-product-800: #40346D;
   --color-product-900: #362C5D;
-  --color-product-1000: #251E3F;
+  --color-product-950: #251E3F;
 
   /* Blu colors */
+  --color-blu-50: #f0f4fe;
   --color-blu-100: #E8EBFC;
   --color-blu-200: #C6CCF8;
   --color-blu-300: #A1ABF3;
@@ -198,8 +153,7 @@
   --color-blu-700: #3C4ED1;
   --color-blu-800: #3443B4;
   --color-blu-900: #2C3999;
-  --color-blu-1000: #1E2768;
-  --color-blu: #4256E7;
+  --color-blu-950: #1E2768;
 }
 
 /* Border radius */
@@ -218,8 +172,8 @@
 
 /* Z-index */
 @theme {
-  --z-header: 100;
-  --z-sidebar: 150;
+  --z-index-header: 100;
+  --z-index-sidebar: 150;
 }
 
 /* Spacing (generated values from 1-111) */
@@ -339,76 +293,76 @@
 
 /* Additional height utility */
 @theme {
-  --height-18: 4.5rem;
+  --size-18: 4.5rem;
 }
 
-/* Utility classes for fractional values */
-@utility margin-1/12 {
+/* Custom utility classes */
+@utility m-1/12 {
   margin: 8.333333%;
 }
-@utility margin-2/12 {
+@utility m-2/12 {
   margin: 16.666667%;
 }
-@utility margin-3/12 {
+@utility m-3/12 {
   margin: 25%;
 }
-@utility margin-4/12 {
+@utility m-4/12 {
   margin: 33.333333%;
 }
-@utility margin-5/12 {
+@utility m-5/12 {
   margin: 41.666667%;
 }
-@utility margin-6/12 {
+@utility m-6/12 {
   margin: 50%;
 }
-@utility margin-7/12 {
+@utility m-7/12 {
   margin: 58.333333%;
 }
-@utility margin-8/12 {
+@utility m-8/12 {
   margin: 66.666667%;
 }
-@utility margin-9/12 {
+@utility m-9/12 {
   margin: 75%;
 }
-@utility margin-10/12 {
+@utility m-10/12 {
   margin: 83.333333%;
 }
-@utility margin-11/12 {
+@utility m-11/12 {
   margin: 91.666667%;
 }
 
 /* Negative margins */
-@utility -margin-1/12 {
+@utility -m-1/12 {
   margin: -8.333333%;
 }
-@utility -margin-2/12 {
+@utility -m-2/12 {
   margin: -16.666667%;
 }
-@utility -margin-3/12 {
+@utility -m-3/12 {
   margin: -25%;
 }
-@utility -margin-4/12 {
+@utility -m-4/12 {
   margin: -33.333333%;
 }
-@utility -margin-5/12 {
+@utility -m-5/12 {
   margin: -41.666667%;
 }
-@utility -margin-6/12 {
+@utility -m-6/12 {
   margin: -50%;
 }
-@utility -margin-7/12 {
+@utility -m-7/12 {
   margin: -58.333333%;
 }
-@utility -margin-8/12 {
+@utility -m-8/12 {
   margin: -66.666667%;
 }
-@utility -margin-9/12 {
+@utility -m-9/12 {
   margin: -75%;
 }
-@utility -margin-10/12 {
+@utility -m-10/12 {
   margin: -83.333333%;
 }
-@utility -margin-11/12 {
+@utility -m-11/12 {
   margin: -91.666667%;
 }
 
@@ -493,11 +447,48 @@
 
 /* Font family utilities */
 @utility font-title {
-  font-family: var(--font-title);
+  font-family: var(--font-family-title);
 }
 @utility font-display {
-  font-family: var(--font-display);
+  font-family: var(--font-family-display);
 }
 @utility font-body {
-  font-family: var(--font-body);
+  font-family: var(--font-family-body);
+}
+
+/* Additional utilities for z-index */
+@utility z-header {
+  z-index: var(--z-index-header);
+}
+@utility z-sidebar {
+  z-index: var(--z-index-sidebar);
+}
+
+/* Import your custom styles AFTER Tailwind */
+@import url('./fonts/inter.css');
+@import url('./fonts/degular.css');
+@import url('./typography.css');
+
+/* Docusaurus-specific styles */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
