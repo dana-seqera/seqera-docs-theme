@@ -1,0 +1,503 @@
+
+@import "tailwindcss";
+
+@variant dark ([data-theme="dark"] &);
+
+@import url('./fonts/inter.css');
+@import url('./fonts/degular.css');
+@import url('./typography.css');
+
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+
+
+@import "tailwindcss";
+
+/* Content paths */
+@source "src/**/*.jsx";
+@source "src/**/*.tsx";
+
+/* Dark mode configuration */
+@variant dark ([data-theme="dark"] &);
+
+/* Custom screens/breakpoints */
+@media sm (width >= 640px);
+@media md (width >= 996px); /* matches docusaurus default breakpoint */
+@media lg (width >= 1024px);
+@media xl (width >= 1280px);
+
+/* Font families */
+@theme {
+  --font-title: Degular, Helvetica, sans-serif;
+  --font-display: Inter, Helvetica, sans-serif;
+  --font-body: Inter, Helvetica, sans-serif;
+}
+
+/* Font sizes */
+@theme {
+  --font-size-xs: 12px;
+  --font-size-xs--line-height: 18px;
+  --font-size-sm: 14px;
+  --font-size-sm--line-height: 21px;
+  --font-size-base: 16px;
+  --font-size-base--line-height: 24px;
+  --font-size-lg: 18px;
+  --font-size-lg--line-height: 26px;
+  --font-size-xl: 24px;
+  --font-size-xl--line-height: 32px;
+  --font-size-2xl: 28px;
+  --font-size-2xl--line-height: 1;
+  --font-size-3xl: 32px;
+  --font-size-3xl--line-height: 1;
+  --font-size-4xl: 40px;
+  --font-size-4xl--line-height: 1;
+  --font-size-5xl: 48px;
+  --font-size-5xl--line-height: 1;
+  --font-size-6xl: 56px;
+  --font-size-6xl--line-height: 1;
+  --font-size-7xl: 60px;
+  --font-size-7xl--line-height: 1;
+  --font-size-8xl: 64px;
+  --font-size-8xl--line-height: 1;
+  --font-size-9xl: 68px;
+  --font-size-9xl--line-height: 1;
+}
+
+/* Colors */
+@theme {
+  /* Nextflow colors */
+  --color-nextflow-100: #E2F7F3;
+  --color-nextflow-200: #B6ECE2;
+  --color-nextflow-300: #86E0CE;
+  --color-nextflow-400: #56D3BA;
+  --color-nextflow-500: #31C9AC;
+  --color-nextflow-600: #0DC09D;
+  --color-nextflow-700: #0CAE8E;
+  --color-nextflow-800: #0A967B;
+  --color-nextflow-900: #087F68;
+  --color-nextflow-1000: #065647;
+  --color-nextflow: #0DC09D;
+
+  /* Wave colors */
+  --color-wave-100: #E8F2FF;
+  --color-wave-200: #C5DFFE;
+  --color-wave-300: #9ECAFE;
+  --color-wave-400: #77B5FE;
+  --color-wave-500: #5AA5FD;
+  --color-wave-600: #3D95FD;
+  --color-wave-700: #3787E5;
+  --color-wave-800: #3074C5;
+  --color-wave-900: #2863A7;
+  --color-wave-1000: #1B4372;
+  --color-wave: #3D95FD;
+
+  /* Fusion colors */
+  --color-fusion-100: #FEEDEC;
+  --color-fusion-200: #FED2D0;
+  --color-fusion-300: #FDB4B1;
+  --color-fusion-400: #FC9592;
+  --color-fusion-500: #FB7F7A;
+  --color-fusion-600: #FA6863;
+  --color-fusion-700: #E25E5A;
+  --color-fusion-800: #C3514D;
+  --color-fusion-900: #A64541;
+  --color-fusion-1000: #712F2C;
+  --color-fusion: #FA6863;
+
+  /* MultiQC colors */
+  --color-multiqc-100: #FDF0E9;
+  --color-multiqc-200: #FBD9C8;
+  --color-multiqc-300: #F8C0A3;
+  --color-multiqc-400: #F5A67E;
+  --color-multiqc-500: #F39362;
+  --color-multiqc-600: #F18046;
+  --color-multiqc-700: #DA743F;
+  --color-multiqc-800: #BC6437;
+  --color-multiqc-900: #A0552F;
+  --color-multiqc-1000: #6C3A20;
+  --color-multiqc: #F18046;
+
+  /* Brand colors */
+  --color-brand-100: #F3F3F4;
+  --color-brand-200: #E8E7E9;
+  --color-brand-300: #D0CFD4;
+  --color-brand-400: #B9B7BE;
+  --color-brand-500: #A29FA8;
+  --color-brand-600: #8A8792;
+  --color-brand-700: #736F7D;
+  --color-brand-800: #5C5767;
+  --color-brand-900: #453F51;
+  --color-brand-1000: #2D273C;
+  --color-brand-1100: #160F26;
+  --color-brand-1200: #151121;
+  --color-brand-1300: #141024;
+  --color-brand-1400: #110D1D;
+  --color-brand: #160F26;
+
+  /* Gray colors */
+  --color-gray-100: #F7F7F7;
+  --color-gray-200: #EAEBEB;
+  --color-gray-300: #DDDEDE;
+  --color-gray-400: #CFD0D1;
+  --color-gray-500: #C4C6C7;
+  --color-gray-600: #BABCBD;
+  --color-gray-700: #A8AAAB;
+  --color-gray-800: #919393;
+  --color-gray-900: #7B7B7B;
+  --color-gray-1000: #545555;
+
+  /* Product colors */
+  --color-product-100: #EAE8F1;
+  --color-product-200: #CBC6DD;
+  --color-product-300: #A9A1C6;
+  --color-product-400: #867BAF;
+  --color-product-500: #6C5E9D;
+  --color-product-600: #52428C;
+  --color-product-700: #4A3C7F;
+  --color-product-800: #40346D;
+  --color-product-900: #362C5D;
+  --color-product-1000: #251E3F;
+
+  /* Blu colors */
+  --color-blu-100: #E8EBFC;
+  --color-blu-200: #C6CCF8;
+  --color-blu-300: #A1ABF3;
+  --color-blu-400: #7B89EE;
+  --color-blu-500: #5E6FEB;
+  --color-blu-600: #4256E7;
+  --color-blu-700: #3C4ED1;
+  --color-blu-800: #3443B4;
+  --color-blu-900: #2C3999;
+  --color-blu-1000: #1E2768;
+  --color-blu: #4256E7;
+}
+
+/* Border radius */
+@theme {
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+}
+
+/* Shadows */
+@theme {
+  --shadow-default: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 2px 21px 11px rgba(0,0,0,0.05);
+  --shadow-hover: 0 0 0 1px rgba(0, 0, 0, 0.65);
+}
+
+/* Z-index */
+@theme {
+  --z-header: 100;
+  --z-sidebar: 150;
+}
+
+/* Spacing (generated values from 1-111) */
+@theme {
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+  --spacing-10: 40px;
+  --spacing-11: 44px;
+  --spacing-12: 48px;
+  --spacing-13: 52px;
+  --spacing-14: 56px;
+  --spacing-15: 60px;
+  --spacing-16: 64px;
+  --spacing-17: 68px;
+  --spacing-18: 72px;
+  --spacing-19: 76px;
+  --spacing-20: 80px;
+  --spacing-21: 84px;
+  --spacing-22: 88px;
+  --spacing-23: 92px;
+  --spacing-24: 96px;
+  --spacing-25: 100px;
+  --spacing-26: 104px;
+  --spacing-27: 108px;
+  --spacing-28: 112px;
+  --spacing-29: 116px;
+  --spacing-30: 120px;
+  --spacing-31: 124px;
+  --spacing-32: 128px;
+  --spacing-33: 132px;
+  --spacing-34: 136px;
+  --spacing-35: 140px;
+  --spacing-36: 144px;
+  --spacing-37: 148px;
+  --spacing-38: 152px;
+  --spacing-39: 156px;
+  --spacing-40: 160px;
+  --spacing-41: 164px;
+  --spacing-42: 168px;
+  --spacing-43: 172px;
+  --spacing-44: 176px;
+  --spacing-45: 180px;
+  --spacing-46: 184px;
+  --spacing-47: 188px;
+  --spacing-48: 192px;
+  --spacing-49: 196px;
+  --spacing-50: 200px;
+  --spacing-51: 204px;
+  --spacing-52: 208px;
+  --spacing-53: 212px;
+  --spacing-54: 216px;
+  --spacing-55: 220px;
+  --spacing-56: 224px;
+  --spacing-57: 228px;
+  --spacing-58: 232px;
+  --spacing-59: 236px;
+  --spacing-60: 240px;
+  --spacing-61: 244px;
+  --spacing-62: 248px;
+  --spacing-63: 252px;
+  --spacing-64: 256px;
+  --spacing-65: 260px;
+  --spacing-66: 264px;
+  --spacing-67: 268px;
+  --spacing-68: 272px;
+  --spacing-69: 276px;
+  --spacing-70: 280px;
+  --spacing-71: 284px;
+  --spacing-72: 288px;
+  --spacing-73: 292px;
+  --spacing-74: 296px;
+  --spacing-75: 300px;
+  --spacing-76: 304px;
+  --spacing-77: 308px;
+  --spacing-78: 312px;
+  --spacing-79: 316px;
+  --spacing-80: 320px;
+  --spacing-81: 324px;
+  --spacing-82: 328px;
+  --spacing-83: 332px;
+  --spacing-84: 336px;
+  --spacing-85: 340px;
+  --spacing-86: 344px;
+  --spacing-87: 348px;
+  --spacing-88: 352px;
+  --spacing-89: 356px;
+  --spacing-90: 360px;
+  --spacing-91: 364px;
+  --spacing-92: 368px;
+  --spacing-93: 372px;
+  --spacing-94: 376px;
+  --spacing-95: 380px;
+  --spacing-96: 384px;
+  --spacing-97: 388px;
+  --spacing-98: 392px;
+  --spacing-99: 396px;
+  --spacing-100: 400px;
+  --spacing-101: 404px;
+  --spacing-102: 408px;
+  --spacing-103: 412px;
+  --spacing-104: 416px;
+  --spacing-105: 420px;
+  --spacing-106: 424px;
+  --spacing-107: 428px;
+  --spacing-108: 432px;
+  --spacing-109: 436px;
+  --spacing-110: 440px;
+  --spacing-111: 444px;
+}
+
+/* Additional height utility */
+@theme {
+  --height-18: 4.5rem;
+}
+
+/* Utility classes for fractional values */
+@utility margin-1/12 {
+  margin: 8.333333%;
+}
+@utility margin-2/12 {
+  margin: 16.666667%;
+}
+@utility margin-3/12 {
+  margin: 25%;
+}
+@utility margin-4/12 {
+  margin: 33.333333%;
+}
+@utility margin-5/12 {
+  margin: 41.666667%;
+}
+@utility margin-6/12 {
+  margin: 50%;
+}
+@utility margin-7/12 {
+  margin: 58.333333%;
+}
+@utility margin-8/12 {
+  margin: 66.666667%;
+}
+@utility margin-9/12 {
+  margin: 75%;
+}
+@utility margin-10/12 {
+  margin: 83.333333%;
+}
+@utility margin-11/12 {
+  margin: 91.666667%;
+}
+
+/* Negative margins */
+@utility -margin-1/12 {
+  margin: -8.333333%;
+}
+@utility -margin-2/12 {
+  margin: -16.666667%;
+}
+@utility -margin-3/12 {
+  margin: -25%;
+}
+@utility -margin-4/12 {
+  margin: -33.333333%;
+}
+@utility -margin-5/12 {
+  margin: -41.666667%;
+}
+@utility -margin-6/12 {
+  margin: -50%;
+}
+@utility -margin-7/12 {
+  margin: -58.333333%;
+}
+@utility -margin-8/12 {
+  margin: -66.666667%;
+}
+@utility -margin-9/12 {
+  margin: -75%;
+}
+@utility -margin-10/12 {
+  margin: -83.333333%;
+}
+@utility -margin-11/12 {
+  margin: -91.666667%;
+}
+
+/* Flex utilities */
+@utility flex-1/1 {
+  flex: 0 0 100%;
+}
+@utility flex-1/12 {
+  flex: 0 0 8.333333%;
+}
+@utility flex-2/12 {
+  flex: 0 0 16.666667%;
+}
+@utility flex-3/12 {
+  flex: 0 0 25%;
+}
+@utility flex-4/12 {
+  flex: 0 0 33.333333%;
+}
+@utility flex-5/12 {
+  flex: 0 0 41.666667%;
+}
+@utility flex-6/12 {
+  flex: 0 0 50%;
+}
+@utility flex-7/12 {
+  flex: 0 0 58.333333%;
+}
+@utility flex-8/12 {
+  flex: 0 0 66.666667%;
+}
+@utility flex-9/12 {
+  flex: 0 0 75%;
+}
+@utility flex-10/12 {
+  flex: 0 0 83.333333%;
+}
+@utility flex-11/12 {
+  flex: 0 0 91.666667%;
+}
+@utility flex-1/5 {
+  flex: 0 0 20%;
+}
+
+/* Min-width utilities */
+@utility min-w-1/12 {
+  min-width: 8.333333%;
+}
+@utility min-w-2/12 {
+  min-width: 16.666667%;
+}
+@utility min-w-3/12 {
+  min-width: 25%;
+}
+@utility min-w-4/12 {
+  min-width: 33.333333%;
+}
+@utility min-w-5/12 {
+  min-width: 41.666667%;
+}
+@utility min-w-6/12 {
+  min-width: 50%;
+}
+@utility min-w-7/12 {
+  min-width: 58.333333%;
+}
+@utility min-w-8/12 {
+  min-width: 66.666667%;
+}
+@utility min-w-9/12 {
+  min-width: 75%;
+}
+@utility min-w-10/12 {
+  min-width: 83.333333%;
+}
+@utility min-w-11/12 {
+  min-width: 91.666667%;
+}
+@utility min-w-1/5 {
+  min-width: 20%;
+}
+
+/* Font family utilities */
+@utility font-title {
+  font-family: var(--font-title);
+}
+@utility font-display {
+  font-family: var(--font-display);
+}
+@utility font-body {
+  font-family: var(--font-body);
+}
