@@ -23,6 +23,7 @@ const Menu = () => {
 
   return (
     <>
+    <div className="tw-wrapper">
       <AnimatePresence>
         <motion.div
           initial="enter"
@@ -63,7 +64,9 @@ const Menu = () => {
           </div>
         </motion.div>
       </AnimatePresence>
+        </div>
     </>
+  
   );
 };
 

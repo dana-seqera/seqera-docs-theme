@@ -20,8 +20,6 @@
 
 @import "tailwindcss/utilities.css" layer(utilities);
 
-@custom-variant dark (&:is([data-theme="dark"] *));
-
 /* Content paths */
 @source "src/**/*.jsx";
 @source "src/**/*.tsx";

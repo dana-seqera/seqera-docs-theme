@@ -4,7 +4,7 @@
   height: 40px;
   font-weight: 500;
   border-radius: 8px;
-  color: var(--color-brand);
+  color: var(--color-brand-950);
   font-size: .9375rem;
   background: white;
   line-height: 1;
@@ -16,17 +16,17 @@
   &:hover {
     text-decoration: none;
     color: white;
-    background: var(--color-brand);
-    border: 1px solid var(--color-brand);
+    background: var(--color-brand-950);
+    border: 1px solid var(--color-brand-950);
   }
   &.secondary {
-    border-color: var(--color-blu);
-    background: var(--color-blu);
+    border-color: var(--color-blu-600);
+    background: var(--color-blu-600);
     color: white;
     transition: all 0.2s;
     &:hover {
-      background-color: var(--color-brand);
-      border-color: var(--color-brand);
+      background-color: var(--color-brand-950);
+      border-color: var(--color-brand-950);
     }
     &.altStyle {
       background-color: rgba(16, 23, 59, 0.8);
@@ -95,8 +95,8 @@ html[data-theme="dark"] .button {
       color: #F1F1F1;
     }
     &.secondary {
-      border-color: var(--color-blu);
-      background: var(--color-blu);
+      border-color: var(--color-blu-600);
+      background: var(--color-blu-600);
       color: #F1F1F1;;
       &:hover {
         background-color: var(--color-blu-800);

@@ -4,7 +4,7 @@ a.button,
   align-items: center;
   padding: 7px 17px;
   border: 1px solid transparent;
-  background: var(--color-brand);
+  background: var(--color-brand-950);
   color: #fff;
   border-radius: 8px;
   font-weight: 600;
@@ -46,11 +46,11 @@ a.button,
 a.button.secondary,
 .button.secondary {
   background: white;
-  border-color: var(--color-brand);
-  color: var(--color-brand);
+  border-color: var(--color-brand-950);
+  color: var(--color-brand-950);
   text-decoration: none;
   &:hover {
-    background-color: var(--color-brand);
+    background-color: var(--color-brand-950);
     color: #fff;
   }
 }
@@ -60,7 +60,7 @@ html[data-theme="dark"] {
   .button.secondary {
     background: var(--color-gray-600);
     border-color: var(--color-gray-600);
-    color: var(--color-brand);
+    color: var(--color-brand-600);
     text-decoration: none;
     &:hover {
       background-color: var(--color-gray-900);
@@ -76,46 +76,46 @@ html[data-theme="dark"] {
   color: var(--color-white);
   &:hover {
     background-color: var(--color-white);
-    color: var(--color-brand);
+    color: var(--color-brand-950);
   }
 }
 .button.blue {
-  background: var(--color-blu);
+  background: var(--color-blu-600);
   &:hover {
-    background-color: var(--color-brand);
+    background-color: var(--color-brand-950);
     color: white;
   }
 }
 .button.blue2 {
-  background: var(--color-blu);
+  background: var(--color-blu-600);
   &:hover {
     background-color: white;
-    background: var(--color-brand);
+    background: var(--color-brand-950);
   }
 }
 .button.white {
   background: #fff;
-  color: var(--color-brand);
+  color: var(--color-brand-950);
   &:hover {
-    background-color: var(--color-brand);
+    background-color: var(--color-brand-950);
     color: #fff;
   }
 }
 .button.brand {
   color: #fff;
-  background: var(--color-brand);
+  background: var(--color-brand-950);
   &:hover {
     background-color: #fff;
-    color: var(--color-brand);
+    color: var(--color-brand-950);
   }
 }
 .button.brand2 {
   color: #fff;
-  background: var(--color-brand);
+  background: var(--color-brand-950);
   &:hover {
     background-color: #fff;
-    border-color: var(--color-brand);
-    color: var(--color-brand);
+    border-color: var(--color-brand-950);
+    color: var(--color-brand-950);
   }
 }
 .button.white2 {
@@ -123,7 +123,7 @@ html[data-theme="dark"] {
   color: white;
   &:hover {
     background-color: white;
-    color: var(--color-brand);
+    color: var(--color-brand-600);
   }
 }
 .button.disabled {
@@ -132,8 +132,8 @@ html[data-theme="dark"] {
 }
 .button.alt {
   &:hover {
-    background-color: var(--color-brand);
-    border-color: var(--color-color-brand);
+    background-color: var(--color-brand-950);
+    border-color: var(--color-color-brand-950);
     color: #fff;
   }
 }

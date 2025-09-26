@@ -95,7 +95,7 @@ const config: Config = {
   themeConfig: {
     image: 'img/favicon--dynamic.svg',
     colorMode: {
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'Seqera Docs',

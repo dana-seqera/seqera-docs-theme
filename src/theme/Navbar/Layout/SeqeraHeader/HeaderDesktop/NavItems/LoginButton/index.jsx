@@ -12,7 +12,7 @@ const NavMeta = ({ isDark }) => {
     if (window.location.pathname === "/") altStyle = true;
   const { colorMode, setColorMode } = useColorMode();
   return (
-    <div className={styles.container}>
+    <div className={`tw-wrapper ${styles.container}`}>
       <div className={styles.buttonContainer}>
         <Link
           sameTab
