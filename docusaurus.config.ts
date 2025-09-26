@@ -43,7 +43,7 @@ const config: Config = {
       swcJsMinimizer: false,
       swcHtmlMinimizer: false,
       lightningCssMinimizer: false,
-      rspackBundler: true,
+      rspackBundler: false, // Switch back to Webpack
       mdxCrossCompilerCache: false,
     },
   },
