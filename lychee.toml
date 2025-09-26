@@ -1,0 +1,176 @@
+# Optimized Lychee configuration
+# https://lychee.cli.rs/usage/config/
+
+#######################
+# PERFORMANCE SETTINGS
+#######################
+
+# Enable caching for faster subsequent runs
+cache = true
+
+# Optimize concurrency (balance speed vs server load)
+max_concurrency = 15
+
+# Reasonable timeout (too low = false negatives, too high = slow)
+timeout = 20
+
+# Retry failed requests (network hiccups are common)
+max_retries = 2
+retry_wait_time = 2
+
+#######################
+# PROTOCOLS & SCHEMES
+#######################
+
+# Only check HTTP(S) 
+scheme = ["https", "http"]
+
+# Require HTTPS where possible (security best practice)
+require_https = false  # Set to true if your docs should only link to HTTPS
+
+#######################
+# STATUS CODES
+#######################
+
+# Accept common successful/redirect status codes
+accept = [
+  200, 201, 202, 204,    # Success codes
+  301, 302, 307, 308,    # Redirects
+  429,                   # Rate limited (but link works)
+  503                    # Temporary unavailable (but link works)
+]
+
+#######################
+# INTELLIGENT EXCLUSIONS  
+#######################
+
+exclude = [
+  # === AUTHENTICATION REQUIRED ===
+  '^https://portal\.azure\.com/',
+  '^https://console\.aws\.amazon\.com/',
+  '^https://console\.cloud\.google\.com/',
+  '^https://gitlab\.com/profile/',
+  '^https://github\.com/settings/',
+  '^https://github\.com/organizations/',
+  
+  # === PLACEHOLDER/EXAMPLE URLS ===
+  '^https://my\.bitbucketserver\.com/',
+  '^https://your-domain\.com',
+  '^https://example\.com',
+  '^https://localhost',
+  '^https://127\.0\.0\.1',
+  '^http://localhost',
+  '^http://127\.0\.0\.1',
+  
+  # === INTERNAL/PRIVATE SERVICES ===
+  '^https://git\.seqera\.io',
+  '^https://.*\.internal/',
+  '^https://.*\.local/',
+  
+  # === API ENDPOINTS (often require auth/params) ===
+  '^https://api\.tower\.nf/ephemeral/',
+  '^https://api\.cloud\.seqera\.io/workflow/',
+  '^https://api\.github\.com/.*',  # GitHub API often requires auth
+  
+  # === CONTACT INFO ===
+  '^mailto:',
+  '^tel:',
+  
+  # === KNOWN PROBLEMATIC SITES ===
+  '^https://www\.gnu\.org/software/screen/',
+  
+  # === DYNAMIC/TEMPORARY CONTENT ===  
+  '^https://.*\?token=',           # URLs with tokens
+  '^https://.*\?session=',         # URLs with sessions
+  '^https://.*\.amazonaws\.com/.*\?', # S3 URLs with query params
+]
+
+#######################
+# FILE TARGETING
+#######################
+
+# Include only documentation files
+include = [
+  "**/*.md",
+  "**/*.mdx", 
+  "README.md",
+  "docs/**/*",
+  "content/**/*",
+]
+
+# Exclude non-documentation directories
+exclude_path = [
+  "node_modules/",
+  ".git/",
+  ".docusaurus/",
+  "build/",
+  "dist/",
+  ".next/",
+  "coverage/",
+  ".vale/",
+  ".github/",
+  "examples/",
+  "test/",
+  "tests/",
+  "__tests__/",
+  "vendor/",
+  ".vscode/",
+  ".idea/",
+]
+
+#######################
+# NETWORK OPTIMIZATION
+#######################
+
+# Custom headers to improve success rate
+headers = [
+  # Standard browser headers to avoid bot detection
+  "accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+  "accept-language=en-US,en;q=0.5",
+  "accept-encoding=gzip, deflate, br",
+  "user-agent=Mozilla/5.0 (compatible; lychee/0.14.0; +https://github.com/lycheeverse/lychee)",
+  "cache-control=no-cache",
+]
+
+#######################
+# LINK ANALYSIS SETTINGS
+#######################
+
+# Check external links (main purpose of link checking)
+check_external = true
+
+# Skip fragment checking - reduces false positives
+exclude_fragments = true
+
+# Skip private/local networks in CI
+exclude_private = true
+exclude_loopback = true  
+exclude_link_local = true
+exclude_mail = true
+
+#######################
+# BASE URL (uncomment if needed)
+#######################
+
+# Set base URL for relative links
+# base = "https://docs.seqera.io"
+
+#######################
+# URL REMAPPING (for migrations)
+#######################
+
+# Remap old URLs to new ones
+# remap = [
+#   "https://nf-co.re https://nf-co.re",
+#   "https://old-domain.com https://new-domain.com"
+# ]
+
+#######################
+# VERBOSE OUTPUT CONTROL
+#######################
+
+# Set to true for debugging (can be overridden via CLI)
+verbose = false
+
+# Show progress for long-running checks
+progress = true
