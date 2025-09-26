@@ -265,6 +265,23 @@ const config: Config = {
         },
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform-enterprise',
+        routeBasePath: '/platform-enterprise',
+        path: 'platform-enterprise_docs',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-math'),
+          require('docusaurus-remark-plugin-tab-blocks'),
+          require('remark-yaml-to-table'),
+        ],
+        rehypePlugins: [require('rehype-katex')],
+        editUrl: 'https://github.com/seqeralabs/docs/tree/master/',
+        sidebarPath: 'platform-enterprise_docs/enterprise-sidebar.json',
+      },
+    ],
     './src/plugins/tailwind-config.js',
   ],
   themes: ['docusaurus-theme-openapi-docs'],
