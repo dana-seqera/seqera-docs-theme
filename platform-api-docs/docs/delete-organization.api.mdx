@@ -1,0 +1,71 @@
+---
+id: delete-organization
+title: "Delete organization"
+description: "Deletes the organization identified by the given `orgId`."
+sidebar_label: "Delete organization"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVE1v2zAM/SuCThuQxdkW5JBTUzQDgg1b0XanIEAVm4mVOpIq0ekyw/99pOx8B9thJ0vkE/Wo9+hKoloGOZxK6+k768gMQuq1Q22NHMo7KAAhCMxBEEIZ/VtxSugMDOqFhkzMtzG91Bsw4plQk+y5KzvSOvARPMn2lX4c1SCIU16tKeyZQiUNbQgaS1BWMwOnMJfntI7LCFOuwev0QMkT3sNrqT3QzehL6MiQ5rBWclhJ3Dq+RBuEZYQurF8rbEKDvqzrGR8PzpoAgU986vX5c0bhq/ggvluRWipkUNYd2e/1LnG3KhNMBgLSXTs0wZRzhU5jC8kqMLY6YnngP5VrCEEtgdVpydv5ClKu5zy/MuqG6A546DKg12ZJPdFRjQWHxt5b/9D2R5k6Mv98pcOdfsJYFKoo7BvxYXiAtPQat1G0W1Ae/KgkmYbTGT8eKZpb1jyLmkedOSsTNllSRX1reajzyG03LRxX23eRIzrZasj7eQRRpFl82Qm4esPIT5uFjcfblh/hlVoRo/vJhZPa1H2hkH0gAviNTsnxDZj1UmnUq/RFSyUMkyTEc11tCUSS6SL6Z2FvDgkisiFnN/d87A4G3R7HnA24VlHu1u/NaJzM1znP6uCc/5rJ9kERfmHiCkUTRoxiZ1UrUvsn6MhhM4akZ06MOVFVcxXgpy/qmsPkac8WoOVGea3m/NZkiEwHXpMBFqoI8JdO3j20Ln8v/j3RV6m3QWW2klkUJe9o+QLb/Y+knhEwB5VRGebX5EZpCg6PTl3M44mV78bfxk9jgqtTa55ZMV5wlRQ9XkQ82Rcwdb3niLxnjnX9B+7W57Y=
+sidebar_class_name: "delete api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete organization"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/orgs/{orgId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes the organization identified by the given `orgId`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"orgId","in":"path","description":"Organization numeric identifier","required":true,"schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"OK - No content"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

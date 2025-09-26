@@ -1,0 +1,71 @@
+---
+id: create-label
+title: "Create label"
+description: "Creates a new label or returns an existing label based on name/value. By default the operation works in a user context, append `?workspaceId` to create/retrieve a label in a workspace context. Resource labels include `resource: true` and a `value`."
+sidebar_label: "Create label"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVs1u4zYQfpUBz66dtoscfGmTbQoELZAgSdHDYgHT0shmQpFakrIjCAb6EH3CfZLOkPqxI3fbAj0U6MWwOT/85ptvhm5FkBsvlh+ElmvUXnyciRx95lQVlDViKd47lAE9SDC4h+gF1oHDUDtDxwbwVfmgzKYzrqXHHKwBI0tc7KSucQ7XDeRYyFoHCFsEW6GTfAHsrXvxoAzlrz06yKwJ+BpmIKsKTQ6r76JHJTO8zVcQLGQR0IIAOIU7pMB0b8wxOPeJ5vCA3taOTlKF5JfpOkdYuc6whOBqXFEpOWVYRcSruZiJAeVtPhDxMychWyUdlRfQMXmt4FrJ5wgr+Sjm71ONrhFvWf11wGnqEp3KQOVogioUOnL22RZLKZatCE3FiRUVs4mmwrpShnR0+U4cDtQxh3SLD9c2bzjm9Kp7Z3eUfOBpxVhXc3jEMOWgiK09IWwOd0Y3b09hKyP3HV3w+bffQRWThLOB7pFZuNEeZ2BLFYbwwtkSGoqErhZYUzHchNhHE7gukoRWWezI4tlzce2UKbt+xixwhxz3Lyj0bE0NGrw8icdsxGEmIoCzlr6UI+PaWo3SsFX5H5Kgz5nJHlTQeCqbh1QamQ+pZ8ohKYuJStdV1vgE95uLi2kn73769/hQ+d9S1+w/Qlyihpkjj3fnyLmWea+df8LS2IYPokTv5QZ5B36ZvN5xWvwR/hvnrJsg//ZMW4dlaGwAqbXdEx5295jVToUmrphrlA7dVR229PMjjz3tn63l1VTZWHQl2SYW3Sof4x+53AT9OMuAfhtC1W+d2I7oRCfpy4+9KJ73IeJiGh/GnXPzKstK4zhmPR2DSMaDURss+xM1dHOgTGEjto7HR/xE/MDV/e1ki3amey0DCxfoAdmpjB6r5MwikFkUQe10V6dfLhY+xs2VJSfSgdJR8IX9fjSwwGm5p3u+nl9ezi/4jJkupTkqNck0bcW3ANtRh//nd7RTGadZVFqquAZiR9pOs8d/P7YsZjppW2bgF6cPBz5O7ygPQq68XGse2ULyS/LnnP/FK3sW1ws2k4e8V7HgqdtJp/j+OIUEF2VO2RhYCn2frv/qibOPsZM1dJj1EVdZhlX4ou/xtN/fPT7xbHavfWlzjnFyz+NFn4ST/7twdBz5eNYSw2ZTx60lUk6eZHm6CN4MfqyqM0nTHCGk5kSPJ/uChhrU8xb4N8Gl5H8AIuCcEw==
+sidebar_class_name: "post api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create label"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/labels"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates a new label or returns an existing label based on name/value. By default the operation works in a user context, append `?workspaceId` to create/retrieve a label in a workspace context. Resource labels include `resource: true` and a `value`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workspaceId","in":"query","description":"Workspace numeric identifier","schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"Provide a label `name`. Set `resource: true` for resource labels. Only resource labels have a `value` — if `resource: true`, include a `value`. Else, omit `value` from your request body.","content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"resource":{"type":"boolean"},"isDefault":{"type":"boolean"}},"title":"CreateLabelRequest"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"value":{"type":"string"},"resource":{"type":"boolean"},"isDefault":{"type":"boolean"}},"title":"CreateLabelResponse"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

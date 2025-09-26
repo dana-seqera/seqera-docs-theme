@@ -1,0 +1,71 @@
+---
+id: validate-user-name
+title: "Check that the user name is valid"
+description: "Check that the user name is valid"
+sidebar_label: "Check that the user name is valid"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVMFu2zAM/RVB56zOtqLAfFq6dUMxoCvWdpeiB8ZmYiW2pUp0usDwv4+U7TRZMmDHXRJLfCLfI5/UaoJl0OmjbgL6oJ8m2jr0QMbW17lO9U8oTQ6EDxy+gQr1RDvw/EECTx9bXctu2v9NtKn5+7lBv+VFjiHzxkky3pUUSmCKrNoMeRkVsgIr0GmraeskVSBv6qXuOmbjMThbBwwSfzc9l7/DtN+/qTfqxqrM1oQ16W6iz6fTY9wl5MojUwvERUc0w8C50mRRcrIKgm33OMkR4zGXHlUYAixRujRQtfMVZpLPeekbmZ7oCDyhiY8aKmXrynvrfwz6ONJF5u9PKBwnompLCsrSvjCfiP5wjP7c9HIwV1hiJSL/U7kcDJg13tA2OukSwaOfNVTw8kmmf6jsU4HZWlEBxD+omp2fTOj9xMTYmIUV4y4x8gRJppPo7mTfdEPhO1Heq9gvvxNSELnRo7KeRxDv9B9frK+A26pXLxTVmnph4/FB9R0+8/DU7Pb66D4ModsSaMFpFFPcmAzDAJaRQRZH1vhyoBLSJAnx3JmxDOKpGYlJ2Y+vASayYcF9nbdnFxdnU9lzNlAFceLDrf2Xlh6w3jWG8BclrgS+8Jw5MmyHdo+PCZMYG86zLLi4xNp2DgEffNl1st2/FTL+3ASYl2K9BZQBjwrvPPzXl+QktTVuX58nBjcC0eKuDXgjFaPbmCBCzqMVKv2ZWZaho71TR1dHsuwc9/XqnrFw6J8//BKzDyGot3u5uS0RcW/XWHNrRuIkay7E1+U3ibjxSw==
+sidebar_class_name: "get api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Check that the user name is valid"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/users/validate"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Check that the user name is valid
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"name","in":"query","description":"User name to validate","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"OK - No content"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"},"409":{"description":"Duplicated element","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

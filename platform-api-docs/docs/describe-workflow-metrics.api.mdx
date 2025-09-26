@@ -1,0 +1,71 @@
+---
+id: describe-workflow-metrics
+title: "Get the execution metrics for the given Workflow ID"
+description: "Get the execution metrics for the given Workflow ID"
+sidebar_label: "Get the execution metrics for the given Workflow ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWEtP4zAQ/iuRT7tSRKE8Dj0tCBahZQWCRXtAPbjptDUkdmo7fSjKf98ZJ2mTppSy1+bUxPN5Xt84Sb+UWT42rPfK5kq/j0I1N6zvMxWD5lYoeTdkPXYNJtBiAH8LyG+wWgSG+SzmmkdgQZOLlEm8QXzpCjf7TEhcibmd4PXQOYrJMS6W7jyD7uTYE0OQVowEaIRqmCZCA4a3OgGfmWACEWe9lNllTEHyTSzL/FpcE/MA1oGnCejl1sgO6MkkAqylHrsRS0gLY2caKR1xmy9dnGH0PqVqYiUNGNrRPT6mn3q8h1+4NVDoRVqy8jgOReAa3HkzBEmbQdXgDQJLTdZEhxV5gKho/hrIteZUo7AQufV1715pcwDGkbrbrxjuU7DPZBKGfBBCTkzmryJQbnxxD3KMXPe65+f+JlXYgzj5vMI51xLxO0tsDAH2hcuKBYkd1AvAUcNfQoo9gdOTPXHdPXGneybIF3tXcs8HEG7piPPysXF6ssPW3WE7/ciGRisszQV7AqMSHcA1t9xlAlHL+sGxPmtpP0TaraB3cUv7gdGugQ9Ny/vB8T7XyFtL/OERj5/yL4aP22f94VGPH3Yt9YdJPX3dtdwfIvcVw6YOmFWNt2A37E+FPkY4BJ5tU8iu+NAj2QqM/YpUVlW6IjBuMD9VukrgzuJvtFa6kflpM/OHUir1pLIeD7FuzIfgBoIEv46WThq9Aq5BXyakjb32STasu8G2eXYCHixwl3NXCH0ezouzjMUMpLcSTe+uGZ0WO1Ek0Y7B1Ukya491SgG2k66l2KwTrWTbMrNnamTelGp+q75MrI1LPZTuBw6EK/nFz3KS3+bWVSzkSLntRROfYYrN8S4f7xoSbGF6DLmlA+EZ0DMRgCnANAE8cBOQ6LBIxfQ6HeP2HQmFIBwCQTYK+2NtIO0BtMnjnBxdXBwd01qsjI3yh0uhF/9fz2t1rFplYWE7ccjxoYSxXM5pwcdaW8fdvZo4XlKC4zDB9AibpgNu4EWHWUbLuYBNEzQUhnRXZHvEQwONRFaH5jN5e2vG74BRNhT0GQ8TQjIa1xnXItd9v5TLt6fiiH73dur9W5MqXxtyWc2mmmzRyayP6An+BUVflF8OuAwCiG1la+NhQoWtztDtzR/E8voR2Bh5531rWsibQ/xR7yCRuzJLS/eUYJb9A8a9klw=
+sidebar_class_name: "get api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get the execution metrics for the given Workflow ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/workflow/{workflowId}/metrics"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get the execution metrics for the given Workflow ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workflowId","in":"path","description":"Workflow string identifier","required":true,"schema":{"type":"string"}},{"name":"workspaceId","in":"query","description":"Workspace numeric identifier","schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"metrics":{"type":"array","items":{"required":["process"],"type":"object","properties":{"id":{"type":"integer","format":"int64","nullable":true},"process":{"maxLength":255,"type":"string"},"cpu":{"type":"object","properties":{"warnings":{"type":"array","items":{"type":"string"}},"mean":{"type":"number","format":"float"},"min":{"type":"number","format":"float"},"q1":{"type":"number","format":"float"},"q2":{"type":"number","format":"float"},"q3":{"type":"number","format":"float"},"max":{"type":"number","format":"float"},"minLabel":{"type":"string"},"maxLabel":{"type":"string"},"q1Label":{"type":"string"},"q2Label":{"type":"string"},"q3Label":{"type":"string"}},"title":"ResourceData"},"mem":{"type":"object","properties":{"warnings":{"type":"array","items":{"type":"string"}},"mean":{"type":"number","format":"float"},"min":{"type":"number","format":"float"},"q1":{"type":"number","format":"float"},"q2":{"type":"number","format":"float"},"q3":{"type":"number","format":"float"},"max":{"type":"number","format":"float"},"minLabel":{"type":"string"},"maxLabel":{"type":"string"},"q1Label":{"type":"string"},"q2Label":{"type":"string"},"q3Label":{"type":"string"}},"title":"ResourceData"},"vmem":{"type":"object","properties":{"warnings":{"type":"array","items":{"type":"string"}},"mean":{"type":"number","format":"float"},"min":{"type":"number","format":"float"},"q1":{"type":"number","format":"float"},"q2":{"type":"number","format":"float"},"q3":{"type":"number","format":"float"},"max":{"type":"number","format":"float"},"minLabel":{"type":"string"},"maxLabel":{"type":"string"},"q1Label":{"type":"string"},"q2Label":{"type":"string"},"q3Label":{"type":"string"}},"title":"ResourceData"},"time":{"type":"object","properties":{"warnings":{"type":"array","items":{"type":"string"}},"mean":{"type":"number","format":"float"},"min":{"type":"number","format":"float"},"q1":{"type":"number","format":"float"},"q2":{"type":"number","format":"float"},"q3":{"type":"number","format":"float"},"max":{"type":"number","format":"float"},"minLabel":{"type":"string"},"maxLabel":{"type":"string"},"q1Label":{"type":"string"},"q2Label":{"type":"string"},"q3Label":{"type":"string"}},"title":"ResourceData"},"reads":{"type":"object","properties":{"warnings":{"type":"array","items":{"type":"string"}},"mean":{"type":"number","format":"float"},"min":{"type":"number","format":"float"},"q1":{"type":"number","format":"float"},"q2":{"type":"number","format":"float"},"q3":{"type":"number","format":"float"},"max":{"type":"number","format":"float"},"minLabel":{"type":"string"},"maxLabel":{"type":"string"},"q1Label":{"type":"string"},"q2Label":{"type":"string"},"q3Label":{"type":"string"}},"title":"ResourceData"},"writes":{"type":"object","properties":{"warnings":{"type":"array","items":{"type":"string"}},"mean":{"type":"number","format":"float"},"min":{"type":"number","format":"float"},"q1":{"type":"number","format":"float"},"q2":{"type":"number","format":"float"},"q3":{"type":"number","format":"float"},"max":{"type":"number","format":"float"},"minLabel":{"type":"string"},"maxLabel":{"type":"string"},"q1Label":{"type":"string"},"q2Label":{"type":"string"},"q3Label":{"type":"string"}},"title":"ResourceData"},"cpuUsage":{"type":"object","properties":{"warnings":{"type":"array","items":{"type":"string"}},"mean":{"type":"number","format":"float"},"min":{"type":"number","format":"float"},"q1":{"type":"number","format":"float"},"q2":{"type":"number","format":"float"},"q3":{"type":"number","format":"float"},"max":{"type":"number","format":"float"},"minLabel":{"type":"string"},"maxLabel":{"type":"string"},"q1Label":{"type":"string"},"q2Label":{"type":"string"},"q3Label":{"type":"string"}},"title":"ResourceData"},"memUsage":{"type":"object","properties":{"warnings":{"type":"array","items":{"type":"string"}},"mean":{"type":"number","format":"float"},"min":{"type":"number","format":"float"},"q1":{"type":"number","format":"float"},"q2":{"type":"number","format":"float"},"q3":{"type":"number","format":"float"},"max":{"type":"number","format":"float"},"minLabel":{"type":"string"},"maxLabel":{"type":"string"},"q1Label":{"type":"string"},"q2Label":{"type":"string"},"q3Label":{"type":"string"}},"title":"ResourceData"},"timeUsage":{"type":"object","properties":{"warnings":{"type":"array","items":{"type":"string"}},"mean":{"type":"number","format":"float"},"min":{"type":"number","format":"float"},"q1":{"type":"number","format":"float"},"q2":{"type":"number","format":"float"},"q3":{"type":"number","format":"float"},"max":{"type":"number","format":"float"},"minLabel":{"type":"string"},"maxLabel":{"type":"string"},"q1Label":{"type":"string"},"q2Label":{"type":"string"},"q3Label":{"type":"string"}},"title":"ResourceData"}},"title":"WorkflowMetrics"}}},"title":"GetWorkflowMetricsResponse"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

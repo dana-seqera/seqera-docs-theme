@@ -1,0 +1,71 @@
+---
+id: ga-4-gh-run-cancel
+title: "GA4GH: Cancel run"
+description: "Uses the GA4GH workflow execution service API to cancel the run associated with the given `run_id`."
+sidebar_label: "GA4GH: Cancel run"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VEtP20AQ/iurPbVSinmJQ04NiFLUAyhQ9YAimNgTe8Hxmt1xQmT5v3dm1yE8Ug5VVR/s9ew8vvnm0WqC3Ovhjc7hMC/0ZKAz9KkzNRlb6aH+6dErKlCdjQ7PvquldQ+z0i4VPmHaiI7y6BYmRTW6PFdkVQpVimUwcU2lwHubGiDM1NJQEeS5WWCl7vj61mR3O3qgbY0OxNt5xjHPBMq4qU6CK76uwcEcCZ0gbXXFP6wW7fnaCNAaqNBv0bMT5cmZKlcmw4rMzKBjLYePjXHIwcg1ONA+LXAOethqWtXiOxrprptEZfR0bLOVaKS2InYlR6jr0qQBeHLvJWL73pWd3mNKHJQMlSI4nde0Em/j6JijdJ2E8bWtmG6x3d/dlc/rbC5+sJe/Dl87YZlMDNCTtyXjDVBmj+sR0R1uA3QMmerZ+XfI5j7fAotrRECNv01thi/uDcfMQ01n1s2Bouhg/1Uiv9CfOmfduKf4OaeDLSSvW1FVlhSU3OyYBW/cgYWV/qxtyDd03FAnYXKSJfpksZcwrz5pI7tdkq472PO0OEOrKyEh5nmM4NCNGnHynE5BVOu+H+V/GpRYEg/f1jneLylgEnLHm/48fYJ5LSm3nYzFzAbXPQtX+MipyZy+m5P+6rIEEhrXM+17ZakspKGyjSt7mH6YJD7Y7RjLSlxcUwb6Z/br5oKBLHhwY5y9naOjnV2RCYdzCI3Rj3NYMEMVh152x1uUL0bvP62lviiET5TUJfCeYeSBgbav/npvDjTXn9+LPdku3AP8GT4vqL4NeJcU0jps1bZT8PjTlV0nYi6g4+Vyw8cFOANTKRhvusx4OXPTzaD0+AEhn8b9Svus/rT0tmbTC6FaCXooG/nj4wOuNiu2m7BmgZCxH4EVL09i8C/X4mJj/G72u8HaYpSmWNOHupMXc3Z5cXUtrd8v3nmYfO1gKRzzOwC1gYy400TW6hKqvIFcdKNPeX4DZWVeUg==
+sidebar_class_name: "post api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"GA4GH: Cancel run"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ga4gh/wes/v1/runs/{run_id}/cancel"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Uses the GA4GH workflow execution service API to cancel the run associated with the given `run_id`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"run_id","in":"path","description":"Run string identifier","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","title":"EmptyBodyRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"run_id":{"type":"string"}},"title":"RunId"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object","properties":{"msg":{"type":"string"},"status_code":{"type":"integer","format":"int32"}},"title":"WesErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

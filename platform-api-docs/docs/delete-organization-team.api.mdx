@@ -1,0 +1,71 @@
+---
+id: delete-organization-team
+title: "Delete team"
+description: "Deletes the team identified by the given `teamId`."
+sidebar_label: "Delete team"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVMFu2zAM/RVBpw3I4mwresipLZoBxYataLtTEKCKzdhqbcmV6HSZ4X8fKStxmnYdUOxkmXyiHslHthJV7uV0LhFU5eViJDPwqdM1amvkVJ5DCQheYAGCIUJnYFCvNGRiuQnmXK/BiFv2XmS3YzmStganOMBFtgvxw+XK6N/BfENQgtXKqYpcjgm00tAPwa3L6dpIan6+VljIQ077oYRpKnA6HXg5wjt4aLQDeh1dAyPp0wIqJaetxE3Nj2iDkAfoyrpKYW86PpJdN9ox6TN6lQpn8v8pLPi6r63x4PnGp8kRfw6q8FV8EN+tSC0FMii7kTyaTJ7jzlQmmAx4pLe2aIKpui51GqqY3HnGtnssB/5zWYH3KgdWRyRvl3eQcrzacbNR90S3wCFLj06bnMsqUWPJpplz1l3F/MjTBeafX8hwKyNhLApVlvaR+DDcQ9o4jZugmzNQDtxpQ+2ZzhdcPBJVYVl6WZBekBp7ZULi8kkbJNYlQfJJ27e5k0PYa65Cn9F+8F1SBWItY0v5fxlAZOkPX7b9vHvEQFeblQ3XYwWu4YEyE6eXF88EFV2XpUKWhfDg1jqlAezB3D6VhvY1roxU/DRJfLg31pZA1EFdBjmt7MngICJrmrX+nY/j4+PxhG219Vip0P2o+35gw7gf8msHAb1tNcQKIvzCpC4VTRZRCKm0sUlz3gCeoNPtJuhXExniQFKHCyLN0LZdKg8/Xdl1bCaVOxYFHdfKabXkcpNEMu35TJJYqdLDK0m9u4q6fy/+vWZeTCYaldlIZlE2/EfHe9jsthsvmTdx+vu+eQOXWM5uQcgCVEZxuFi98zRNoca9a8/WxZNJO599m93MCK6ejsrBaIQHXmRFnQyIG3sPpusGkvzPHLvuD7q8R2A=
+sidebar_class_name: "delete api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/orgs/{orgId}/teams/{teamId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes the team identified by the given `teamId`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"orgId","in":"path","description":"Organization numeric identifier","required":true,"schema":{"type":"integer","format":"int64"}},{"name":"teamId","in":"path","description":"Team numeric identifier","required":true,"schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"OK - No content"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

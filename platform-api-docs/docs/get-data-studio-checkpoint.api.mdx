@@ -1,0 +1,71 @@
+---
+id: get-data-studio-checkpoint
+title: "Get Studio checkpoint"
+description: "Retrieves the details of the given Studio checkpoint ID."
+sidebar_label: "Get Studio checkpoint"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVktP20AQ/ivWnlopJLRFHHIqb6FKFPFQDyiHxZ7EC47X7I4DaeT/3pldvxJbEGgPvSTe3Xl8856VQDmzYnwnLOaR0lZMBiICGxqVodKpGIsrQKNgATbAGIIIUKrEBnrqjjO1gDS4drxBGEP4mGmVYnB+PBQDoTMwksWcRyToDPBYovTERzUt0WXSyDkgGEayEikdiN6CtZ53IBQjySTGYhNeqbskDtJ8DkaFgYogRTVVYIjDwFOuDBAINDkMhCWkcynGK4HLzKkiE9OZKIpBrb0x5g0AFx2NlXMaEcNtQBAdzBzeqTZzif5qf28N1rM2jzaTITSonnIwyw6sXxVhv0veo33C4G2mU3Iyc3zd3eW/dX0/fxBrqEkKhZReZZYlKnTRHz1YJlm1lDbOuBMyx1iz4kgiHBmg36g8XcuF+1b84zwwqIJgUWLu0rU0QN8/QOiyyXDeofJgiXUbI0vx3ZRYh9V5b0liuh1UJKVoo9+apfTDpncWVDOMmDynksoXuQVzwYD/nf21yD4feOV9LyW+vloSqDDhq1sSfZ5ONdO78PUJKgPa4y6gDGZXwDzDpct6ahVqzlaoVCbqt8+RdEHfEXvkZYdZdhbScFDtu3grzJtt6trDa5vV182OkawsmGqvr0oOZXRFwQWLH60WssfK2RaBrwhfjcyJMdpclcVdA//WU95VKw9SjYFMEv0M0VA48r0u+YXGU52n0SB4jmlAcDf0AybQZqM3Bso6mVOm5+ea4+DynB8jZeV9AhFReN66B/6vPuRshjA3ilKOB9ohSAPmIOfMv5twP6VpF2seijPAqqeNxagcwqNVPfuKUeMpum9PpUI0aq7ZTo+5rayGHSNmVdfn870johv/cVp1g4dndLYprlZmr6oBnij+HJHuAPZPl4lEbio0ic1ChbQueGIOkAxdgHKTlFDseDSyjm+odN3bxk7t9+aBgCxoKfB6vgz394e7roVoi3Pp4ltORVotukvIJtJVkyx/s9SUHkV4wVGWSBrB3DyN644+js0yNRDj9hbTCiU/ra0YlBQx2cXcq9W9tHBrkqLgaz/fOY+qShDjqUwsvGLfG9O/14ZHWHYWDGqLOVMKTlrqp4r1vxPLp6uy9D4H2yxrvdjKS5ku26AqzI2PeVP6ELJtt7gPoFsLczEh+hhkRLayGz3JQRhChi3mTi9baxpnJzfC7wutEt8oaSe9Fxill6O40Y+QFkWNE/nMAIviD0+fK2c=
+sidebar_class_name: "get api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Studio checkpoint"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/studios/{sessionId}/checkpoints/{checkpointId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves the details of the given Studio checkpoint ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"sessionId","in":"path","description":"Studio session numeric identifier","required":true,"schema":{"type":"string"}},{"name":"checkpointId","in":"path","description":"Numeric identifier of the checkpoint.","required":true,"schema":{"type":"integer","format":"int64"}},{"name":"workspaceId","in":"query","description":"Workspace numeric identifier","schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"required":["author","dateCreated","dateSaved","id","name","path","status"],"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"dateCreated":{"type":"string","format":"date-time"},"dateSaved":{"type":"string","format":"date-time"},"author":{"required":["avatar","email","id","userName"],"type":"object","properties":{"id":{"type":"integer","format":"int64"},"userName":{"type":"string"},"email":{"type":"string"},"avatar":{"type":"string"}},"title":"UserInfo"},"path":{"type":"string"},"status":{"type":"string","enum":["empty","interim","finalized","invalid"],"x-enum-varnames":["empty","interim","finalized","invalid"],"title":"StudioCheckpointStatus"}},"title":"DataStudioCheckpointDto"}}}},"400":{"description":"BadRequest","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed."},"404":{"description":"NotFound, when the studio or the checkpoint is not found or when the API is disabled for the workspace","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

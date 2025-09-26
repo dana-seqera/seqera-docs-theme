@@ -1,0 +1,71 @@
+---
+id: apply-labels-to-actions
+title: "Replace action labels"
+description: "Applies the given list of labels to the given pipeline actions. Existing labels are replaced — include labels to be preserved in `labelIds`."
+sidebar_label: "Replace action labels"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVM1uGjEQfhXLZ8LSNsqBU0mVSlGjJkqoekBIMbsDOPHaru2FoBVSH6JP2CfpjO0NEKK0x14QO/7m75tvpuVBLDwfTrgSM1CeT3u8Al86aYM0mg/5yFolwbOwBLaQK9BMSR+YmbPkwYLZe7PSgpIamCjJ3/fZxRPCpV50cOGAObBKlFCx3z9/MalL1VSwF24GzDrw4FYIkZrdx6fLyt/3eY8bC05Q8Msql7e5iq5jM0pJEWSFEzUEcNRbyzV+IHht3KO3mBlde1xSez8acBv+sunvHZDppgYnSyYr0EHOJTgE+3IJteDDloeNpcBSB1jEp7lxtQjJdHbKt1sk1AFm8eHcVBvyOUx1lWmhPlhGYpzSYEgdCE9PsowtFw+enNrjCszsAUpytI4ICjiy6FsmpvweVDgnqGUZoN63++BwTlhyj3eE/4PXG61joCCDItTIe1NKESCNKDV9m7uNSGpdOsCZBtdANHiLw0x9vB+cHlN3/YWdsK+GdVyh0+ngwyu4TjFMm8CEUmaNeSiph7JxMmyiSM4BtelGTVji55QGhwpaGlKZNXEoVtAbL7K4iyTZIs6O76Ld0XBS3fsxnylbhmA7FdH3LILQkv587nh8WIdYJQ39dqehiydRW2L1YLyTbn7T/fFNBtMtKX1uYv48jTv4gYyw0c3lkfLz040SgebJaAtlifufwEQ1JqVgjVO5Fz8sCh/9+tIgCJUpVdTB3HzcPWAhK1zIlOdd/+ysPyAbcVuLqOq8prfpPOQbkg/Dy0rb3Yr8fzcqDzrAUygwDF4abDQS1mYRTfLsqK/nBpOQcIBL0hti2nYmPHxzarslczpWpNVKejFTtC1zoTy8wc1fTtmrlT7C5uharoRqCMlpMVbCScofFwXLBVFhNCosuX5K6U/GFH3ne3TJDpbs5vpuTEuQz2RtKvJxYo1G+sXcdP0TawiIthbZ04tGLAibYtLKiMONe7FhsdLurunNXoVIeESMzSNoJL3jItA3lovB/wBikH/L
+sidebar_class_name: "post api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Replace action labels"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/actions/labels/apply"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Applies the given list of labels to the given pipeline actions. Existing labels are replaced — include labels to be preserved in `labelIds`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workspaceId","in":"query","description":"Workspace numeric identifier","schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"Labels apply request","content":{"application/json":{"schema":{"type":"object","properties":{"actionIds":{"type":"array","items":{"type":"string"}},"labelIds":{"type":"array","items":{"type":"integer","format":"int64"}}},"title":"AssociateActionLabelsRequest"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"OK - No content"},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

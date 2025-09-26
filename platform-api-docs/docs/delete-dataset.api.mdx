@@ -1,0 +1,75 @@
+---
+id: delete-dataset
+title: "Delete dataset"
+description: "Deletes the dataset identified by the given `datasetId`."
+sidebar_label: "Delete dataset"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVMFu2zAM/RVBpw3I4mwreshpLZoBxYataDv0EASoYjOJWsdSJTpdYPjfR8qynaRBh3UnS+ST+Ug+spKoll6OpzJTqDygl7OBzMCnTlvUppBjeQE5IHiBKxARJXQGBeqFhkzMt8Gz1BsoxH0EXGb3QzmQxoJT/JvLrPvRRYMgr1VOrcnimEAlC7oQ6tm4R29VCvRmIDUzsApX8pDWXYsTRbkGp9OelCOwg6dSO6C46EoYSJ+uYK3kuJK4tRxHFwjLAF0Yt1bYmE5PZF0POjJdOq9SiSkJj04Xy3/k0TyiqDMGe2sKD579n0Yn/NkP9fOb+CB+GJEaol+grAfyZDR6iTtXmeDQ4LnSLZpgytpcp6EpyYNnbLXDqWc7lWvwXi2BBRGpmvkDpKFzjjuLuiHaAo/kRE815myaOGfcdcyPPHVg/vlIhq1mRGFQqDw3z8SH4RlYB0R9p5iQlk7jNujnHJQDd1ZSg8bTGZeTxLUyrLwsKC9Ijr0y6UTmk2pHcHXSjkFSda2vZR/ohivVZL0brkt8hWhlbDLf5wFElubwtVXawzOGlHSxMOF5rNINPFH24uzq8oXIousqV8iCFR7cRlMCEcwtVmlocenySMWPk8SHd0NtCERd1nkQ+sJ86R1EZENT2MT5ODw9HY7YZo3HtQoKiePQTHC7BQ4pVr3O/mdpxFIi/MbE5orGjriEnKrYv2m/JDw9GO+vjG6TkaefX5LDivLhx1U1J+Mvl9c1m2lIHCuIjhvltJpzJ0hPmfZ8Jv0sVO7hlWTfXcexeS/+spWO5haNqthKppCXfKPjI2wP9iFvpjfRem1DvYFTX9Z6RuAVqIx+xUVr/GdpChZ3Xr7YOnvjeTH5PrmdEFztT9PB9IQAR4lRRwPi1jxCUdcdT+Q7c6zrP4DgYfo=
+sidebar_class_name: "delete api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete dataset"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/workspaces/{workspaceId}/datasets/{datasetId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Deletes the dataset identified by the given `datasetId`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workspaceId","in":"path","description":"Workspace numeric identifier","required":true,"schema":{"type":"integer","format":"int64"}},{"name":"datasetId","in":"path","description":"Dataset string identifier","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"OK - No content"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

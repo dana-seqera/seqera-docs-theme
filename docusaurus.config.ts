@@ -1,6 +1,6 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
-import "dotenv/config";
+import 'dotenv/config';
 import type * as Preset from '@docusaurus/preset-classic';
 import type * as Plugin from '@docusaurus/types/src/plugin';
 import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs';
@@ -211,22 +211,22 @@ const config: Config = {
     prism: {
       theme: prismThemes.oneLight,
       darkTheme: prismThemes.oneDark,
-           additionalLanguages: [
-          "bash",
-          "docker",
-          "groovy",
-          "ini",
-          "java",
-          "javascript",
-          "json",
-          "nginx",
-          "python",
-          "r",
-          "shell-session",
-          "sql",
-          "typescript",
-          "yaml",
-        ],
+      additionalLanguages: [
+        'bash',
+        'docker',
+        'groovy',
+        'ini',
+        'java',
+        'javascript',
+        'json',
+        'nginx',
+        'python',
+        'r',
+        'shell-session',
+        'sql',
+        'typescript',
+        'yaml',
+      ],
     },
     stylesheets: [
       {
@@ -239,18 +239,29 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
   plugins: [
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform-api',
+        routeBasePath: '/platform-api',
+        path: 'platform-api-docs/docs',
+        remarkPlugins: [require('remark-yaml-to-table')], // Remove await and .default
+        sidebarPath: 'platform-api-docs/docs/sidebar/sidebar.js',
+        docItemComponent: '@theme/ApiItem',
+      },
+    ],
+    [
       'docusaurus-plugin-openapi-docs',
       {
         id: 'api',
         docsPluginId: 'classic',
         config: {
-          petstore: {
-            specPath: 'examples/petstore.yaml',
-            outputDir: 'docs/petstore',
+          platform: {
+            specPath: 'platform-api-docs/scripts/seqera-api-latest-decorated-cr.yaml',
+            outputDir: 'platform-api-docs/docs',
             sidebarOptions: {
               groupPathsBy: 'tag',
             },
-          } satisfies OpenApiPlugin.Options,
+          },
         },
       },
     ],

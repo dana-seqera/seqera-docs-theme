@@ -1,0 +1,71 @@
+---
+id: delete-token
+title: "Delete token"
+description: "Deletes the given API access token ID."
+sidebar_label: "Delete token"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE2PGjEM/StRTq1EgbZoD5zKCiqhVu1qd3tCHMKMYcIOSTbxsEWj+e+1M+EbrXoiYz/bz342tUS1CnI4k2hfwAQ578gcQua1Q22NHMoxlIAQBBYgVnoLRowepkJlGQQycpCYjruyI60Drzhomh/CntlPPqe82tC351K1NPRBmBhN6I7UXMkpLORl+ZhBmGoDXmdC52BQLzV4Anp4rbQHqoa+go4MWQEbJYe1xJ3j/NogrCJ0af1GYWu6G8immXN4cNYECBzxpT/gn/Pav3+IT+KXFZmlRAZl05GDfv8ad69ywWQgINXaowmmnCt1FofSWwfG1icsj/xnckPTVCvg8SfydrGGjPM5z5NF3RLdA49dBvTarKgnCtVYsmnivfWPqT/yNJH51xsd7jUTxqJQZWnfiA/DA2SV17iLet2D8uBHFekznM15eCRmYVnnPOocJWav7LV71KuTuI085nri1ts2TjMeOikQnUw68vcigsjSPr7vRVy/YeSozdLG8NT2E7xSO7yfV2uUXA+lQt4FEcBvNa1wArNmKouaVb5MVMKw1wsxrqstgUg2XcYdWtpvRwcR2dJit3U+d+/uun22ORtwo6Lkad3bk2hv5pJgfVyb/7+4NDaEv9hzpaIjorqRf53kOJx1h44kXRupVxA3dtb1QgX448umYTNtsGfB6blVXqsFT5Xkz3XgN8m9VGWAd6h/eEw7/VG8c7g3eSejMjvJ5cuKv+j5AruTv4pmTtACVE6JmFrrHdFsHJ7EXR3e2c6OJz8nzxOCq/P9u9i3WOAmLZpbRMQem+acJXNsmn+ggtGT
+sidebar_class_name: "delete api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete token"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/tokens/{tokenId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes the given API access token ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tokenId","in":"path","description":"Token numeric identifier","required":true,"schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"OK - No content"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

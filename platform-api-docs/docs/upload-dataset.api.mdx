@@ -1,0 +1,75 @@
+---
+id: upload-dataset
+title: "Upload new dataset version"
+description: "Uploads the CSV or TSV content to create a new version of the dataset identified by the given `datasetId`."
+sidebar_label: "Upload new dataset version"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vstu2zoQ/RWCq17AiXLbIguvmjS3aFC0DfLqIghQWhzbTCRRISmnhqF/7wxJPRwpTtrFXVkmZzhnZs48NtyJheXTGy6FExac5bcTLsGmRpVO6YJP+VWZaSEtc0tgHy+umTbsEn9SXTgoHHOapQaEAyZYAY9sBcaiItNzrxHfZUqisJorkGy29jcLtYKC/YwCp/LnPp9wXYIRZPhUtqZPggTelsKIHBxaQMgbXuAflHrU5t6WIgXUmXBFmEvhlvypIz8aOVZUORiVdqAMCht4qJQBtOtMBRNu0yXkgk833K1LsqPQ4YUXnWuTCxeODt/zup60YFp3dkKJLjHrjCoWf4gjKG1ZXYKQXtmbfKjArAc2QzAx/nOVAVsKy1qtgYmZ1hmIAm3cBkBg3bGWaxIZ98Q/GiXxxcgOks+rzCnMnEsobHsUIDoe2NSzO0h9lg2xwCmwdEsPD53v5WCmCoHuYji4U46E+VcyeR7AfEL9i2CrJpnt8PoDW+rCBmtvDw6GPn7/su2RKMtMpZ6myZ0lkde7E8vjZcGOSMPMT5rbbz79z9+f9P0YEUMWfA4kGMn9ZATs8zWAEfJtQB57lnRhvuFihWhIByOkMmIpVUdlwXj8SLHdoVDylQjaJ8d8DcbHbiK+sQprKXWFT58Wc03ymbDuqpTk7E5mksSeU4gHlYjHz2LLQSpx6U9HbvsN7pWBMGOe9tyJZXsdEnzi9Laz/b4bZc5jmVAVoej7sUI5FnK8B+yumD5XcrBWLF5BikZwp5v/GaPNAPm7kRJv5g4rtGMiy/Qj4iFxCaWBNOQ6NmRIK6Pc2s+gYxAGzFGFTX56c0vtEgfUUtP0KrUNQ4vueNJm0SabXkbrpBm9yaat+TqpfAp4Z833sOB632br/dK5smnlvoy9EJ6Ej08NR+4enfdLEZlJPYbqAh4wBOzo7HQwOeLVWSYcUY1hKawU+hGFKc8i9Xn2vPNQ7DRJrNfbV7ot/ak3+6G76DcZ/u/+4eH+AZ1R6HLhaRInXKCk3zCalaJRfAJ30xHv/91dYiIc/HJJmQlV9CoxkOCmK2WLCtPtzaVdwfCmv0ZEKiC1lsQofGWzmeHtlcnqmo7DvCc2SmXFLCOqzkVm4cXIjG4Do37cw7q/Z6xEVpEQJ8avhFFk9g8hvDmPdf8Pe2E1G0UUD0Wx7uNpkPZDS4vSX8Hatab9BaYuqfUtDd84eTFo4f5jwLDnB0GnP7ZAkUtB6ShNoXQ98UGv3WpKZ98vLqkpxGUu15J06GH/7qT7pHaGs3G7yzzpKh78qNNIUS9xqe+hQJo2MXD0n/yv699nLVDV
+sidebar_class_name: "post api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Upload new dataset version"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/workspaces/{workspaceId}/datasets/{datasetId}/upload"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Uploads the CSV or TSV content to create a new version of the dataset identified by the given `datasetId`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workspaceId","in":"path","description":"Workspace numeric identifier","required":true,"schema":{"type":"integer","format":"int64"}},{"name":"datasetId","in":"path","description":"Dataset string identifier","required":true,"schema":{"type":"string"}},{"name":"header","in":"query","description":"Uploaded file has header","schema":{"type":"boolean"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"Dataset file request","content":{"multipart/form-data":{"schema":{"type":"object","properties":{"file":{"type":"string","format":"binary"}},"title":"MultiRequestFileSchema"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"version":{"type":"object","properties":{"datasetId":{"type":"string"},"datasetName":{"type":"string"},"datasetDescription":{"type":"string"},"hasHeader":{"type":"boolean"},"version":{"type":"integer","format":"int64"},"createdBy":{"required":["avatar","email","id","userName"],"type":"object","properties":{"id":{"type":"integer","format":"int64"},"userName":{"type":"string"},"email":{"type":"string"},"avatar":{"type":"string"}},"title":"UserInfo"},"lastUpdated":{"type":"string","format":"date-time"},"fileName":{"type":"string"},"mediaType":{"type":"string"},"workspaceId":{"type":"integer","format":"int64"},"url":{"type":"string"}},"title":"DatasetVersionDto"}},"title":"UploadDatasetVersionResponse"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

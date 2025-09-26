@@ -1,0 +1,75 @@
+---
+id: list-datasets
+title: "List available datasets"
+description: "Lists all available datasets in the workspace context identified by the given `workspaceId`."
+sidebar_label: "List available datasets"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVktv00AQ/ivWnkAKTXmoh5xoKaAIBAhacagidWJPkm03u2Z3nBIs/3dm1k7iNE5bKrhwirPz7cw37y0VwTSowYXKgCAgBTXqqQxD6nVO2lk1UB91oJCAMQksQBsYG0xW6ETbhGaY3Dh/HXJIMUmdJfxJic7Qkp5ozJLxMmKmeoE2uVxDh9nlgeopl6MHMTXMGmOnKyo9lYOHORJ64Vgqy38Y1FLBGC0kc6CZus38+5qVLebodbph5Rns8UehPbJZ8gX2VEhnOAc1KBUtc7Gj2ZVphE6cnwPVR0evVFWN5HrInQ0Y5MaLw0P52bb/+QNfjQGxJFLIc6PT6Gz/Kgik3DXqxleYkvjuJTSkawPr/GyQ4D0sJQCE83C/Bp21MIG8tlNV9VQR2EMWbKJxoTjRBOI3U9NGTEigBflJMsDO/4Gp/VFsqexiVhvvkjT8dkUsI01Gjs5Z9dBOnODbBfMwYs5Pwepf68J80CW7zxMDgc5zTiFmJ8v/PdhbPdChb46ZhrN42iGVIL3xKKHalbe8Etwz0uzNdnwffilDg9sXxs4ZBFtrHKP5W832qJpZgCm6JTx4XOFT7GauwylOoDC0V7xkmzrdJx4yWZ87A3tj84gUtUrlo0T2dHxKLh4veLZvV8odU3ejpdkRtZa29tb++NoMaEEw5FXXiD6BLJFmxEB/Mqvb/TvHEGD6gEZdAe/spLfeO7/D/GXHclntzcQ6kvXsbphPFQs795jW6Wk2G6aF17SMS/QEwaM/LnhhDi5Gssl4w86cbN8pRtaySweqv56aoV+2JmjVzzYLeqX5m4SmdrOtf+3pjChXzYqN5RRBfFJ/vFtl+uqGog9aholcb8LyDX+wu8nxl+HOlm9EX7hipWASHkULzaQbsOQU0pjTwpuGShj0+yHeO9BuPXoH0ezrjaBdn+r5wdHRwaGc5S7QHGJJNC8SKbuO59FtruWmwv71s6qJu1zq5wZ07NwYgLJJ8MVmLQrRwfarqv0enLG/gi/LMZ+de1NVcsxd46WkRjKsvBYPYoFlOsg3F9QETMA7YvDka9NHT5N73mqd7qxGs5XB3MxLxZ/XuLz1SqxGDJ8hZPLWYYo14jhNMafW3Z2m3+qO92/PGAvbhX2rkKP2Tl4cvIg4c9doOYArmiT/hWBV/Qb9h/j2
+sidebar_class_name: "get api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List available datasets"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/workspaces/{workspaceId}/datasets"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Lists all available datasets in the workspace context identified by the given `workspaceId`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workspaceId","in":"path","description":"Workspace numeric identifier","required":true,"schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"datasets":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"user":{"required":["avatar","email","id","userName"],"type":"object","properties":{"id":{"type":"integer","format":"int64"},"userName":{"type":"string"},"email":{"type":"string"},"avatar":{"type":"string"}},"title":"UserInfo"},"workspaceId":{"type":"integer","format":"int64"},"organizationId":{"type":"integer","format":"int64"},"name":{"type":"string"},"lastUpdatedBy":{"required":["avatar","email","id","userName"],"type":"object","properties":{"id":{"type":"integer","format":"int64"},"userName":{"type":"string"},"email":{"type":"string"},"avatar":{"type":"string"}},"title":"UserInfo"},"description":{"type":"string"},"mediaType":{"type":"string"},"dateCreated":{"type":"string","format":"date-time"},"lastUpdated":{"type":"string","format":"date-time"},"deleted":{"type":"boolean"},"labels":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"value":{"type":"string"},"resource":{"type":"boolean"},"isDefault":{"type":"boolean"},"isDynamic":{"type":"boolean"},"isInterpolated":{"type":"boolean"},"dateCreated":{"type":"string","format":"date-time"}},"title":"LabelDbDto"}},"version":{"type":"integer","format":"int64"}},"title":"DatasetDto"}}},"title":"ListDatasetsResponse"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

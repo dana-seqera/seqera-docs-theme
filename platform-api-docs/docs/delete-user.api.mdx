@@ -1,0 +1,71 @@
+---
+id: delete-user
+title: "Delete a user entity"
+description: "Delete a user entity"
+sidebar_label: "Delete a user entity"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1VE1v2zAM/SuCThvg1dlW9JBTUzQDig1b0Y9TkANjM4lSR1IlOl1h+L+PlJ2vJT1ZIh/JRz7KjSZYRD2c6DpiiHqaaecxABln70o91LdYIeEzO3WmPQRY8zVIRKMtXxgikYzNtLF880BLPpcYi2C85GGjxCtbrzGYQpkSLZm5SSkDvtYmIJeiUGOmY7HENehho+ndS3ZjCRcJOndhDdSZri51204lPHpnI0aJ+Da4lM9x6T8/1Rf126nCcSJLus305WBwiruBUgkZjMS1tmiGgfeVKdJE8lUUbHPAcs9/otcYIyxQhtiTd7MVFpLPBxkrmY7oFrjvMlIwdsE9caihSkzjEFx46PtjT5uYfz/T4VYwZR0pqCr3xnwEHrGog6H3pNYNQsAwqlme4WQqwztO0ymtQImeSiTiwIy50tLJJpTJn7ZAUug8bUzedPK3el/uUabTdXpYdNfsksjrXmq5zxKILd3hx1bn1RulNoyduxTeT+YRX7ljNbq/O1m03nVfAcm6KOa2MQXGHiyyQpFkrUPVU4nDPI8p7sI4BrGypkprNnfXewcT2XDDXZ2vF1dXFwOxeRdpDWkr+vfwwSCPiO5mQfiXcl8Bvx1Olkg1/YS3bzLTw/6JsWZLLieupplBxOdQta2YeW+DyMzHDQQDMxkUi16aKGfWbw5VxBMWuz3Xnx76Tf6sPn6tZ0n3RrDS5QaqWm58fMH3/d+hnTJyiVByHiHWOUdFgZ4Owk4em+zpbgVvx7/GT2OGw/FC/bdAqcBZVjy1hHhyL2jbdkeS5C4c2/YfI6u6Eg==
+sidebar_class_name: "delete api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a user entity"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/users/{userId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a user entity
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"userId","in":"path","description":"User numeric identifier","required":true,"schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"OK - No content"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

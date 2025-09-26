@@ -1,0 +1,71 @@
+---
+id: delete-data-studio
+title: "Delete Studio"
+description: "Deletes the Studio associated with the given Studio session ID."
+sidebar_label: "Delete Studio"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVE1v2zAM/SuCThvgJd1W9ODTOiQFig1d0XbYIchBsZlYrSO5Ep0sMPzfR8pf+cI+gJ0SkxT5xPeeKolq5WU8kx7LVFsv55FMwSdOF6itkbGcQA4IXmAG4jEUCeW9TbRCSMVWYxZSK70B0xV48J5Oi9vJSEbSFuAUd7tN+34ThaoppoJCObWmoGMklTT0QYVtEzoUSc1ICoWZPIZ3NNGUa3A6EToFg3qpwdEJB6+ldkDT0ZUQSZ9ksFYyriTuijAKnTYrWddRP31r3YsvVALD/NcS3O4EwI+u8Pzsk1naIKxCamndWmETurqk6XOG6gtr6DZ84sPFJf8czvv2RbwTd1YklhoZlHUkLy8+nqnrti6MRaHy3G4hHTXlZ9reWbyxpUkjsc2IyD22tQ8dlpwV1g356/tbTqbaq0VOWqD7hHi/Oia/g0kDVVHkOgmYxs+ep1Z76xlImsk1salWwGJst2YXz5Aga8WxnFA3G+oKz1EpUWPOoalz1j20i6VMzUkPSek07oLiPoNy4K5L0lc8mzMPJMfMslzTINcgUs7KcWuUcdXrs5ZDu0e+T4Ntv2kPL0MsOlXw9yIUUaT5c9NJ4nmL4Q7aLG043t7lEV6JVl79qROa1H2ukJVFlnAbnZBzm2ImQiWBiNLlLRQfj8c+nBsFJxIXOg+KXNpPQ4KAbMidzZz3o6ur0QXHCutxrQKPrWsac4ve2QcIq0EM/+FVaReK8BPHRa7IoYQo3KxquRoetUjGw2tC7GYEnPNVtVAevru8rjncGJwF0WlaxkuVe/jNRf5g/7MoX2B38sJsVF5ypWT1bZTTPP8fsbx5aD309nhlf4+tDSqz2wfVYR62WM+pOAOVUitG2eSvkwQK3Dt54vkDc02mX6dPUypXhy45ckUYcBYYERgqnuwLmLrucSJ/M8a6/gXD62BJ
+sidebar_class_name: "delete api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Studio"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/studios/{sessionId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes the Studio associated with the given Studio session ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"sessionId","in":"path","description":"Studio session numeric identifier","required":true,"schema":{"type":"string"}},{"name":"workspaceId","in":"query","description":"Workspace numeric identifier","schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"OK - No content"},"403":{"description":"Operation not allowed."},"404":{"description":"NotFound, when the Studio is not found or when the API is disabled for the workspace.","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

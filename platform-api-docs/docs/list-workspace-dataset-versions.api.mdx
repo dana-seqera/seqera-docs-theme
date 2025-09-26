@@ -1,0 +1,75 @@
+---
+id: list-workspace-dataset-versions
+title: "List latest dataset versions"
+description: "Lists the latest version of each dataset associated with the given `workspaceId`."
+sidebar_label: "List latest dataset versions"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vk1v2zAM/SuGThuQ1d1W9JDTWrTbig1b0Y/tUBQoazOxWttyJTpZEPi/j5Q/4iRumx12SiI+So/kI5mlIpg6Nb5RMRA4JKduRypGF1ldkDa5Gqvv2pELKMEgBUJHwQytY1NgJgFClASNawDOmUgzJg7mmhLvMtUzzIO7ubGProAIz+K7PTVSpkALcv9Z3Lzwu0Wc1Lf9qh9xDC7AQobEB0x0qXL+wU69KxmjhWkBlKhN+t3FQV5maHUU6Bhz0hONlsEWn0ptkWmQLXGkXJRgBmq8VLQo5B2dE049dGJsBlQfHR6oqhp1ZDKd4ZXgGyZPJdqFGrjNkdX5lC15maZwn2L9blXdChVXcMToBP9hf18+1mP5+Y09I8OMchIrFEWqI5/I8MEJZLn9pLl/wIgkj1bSTrp+YNYmeIUEa0FYa8LMvX5DU3cp4WZ81ai1/vAJet5+0g9wAJaA+4oQcwFW1ntjUoRczE0UO9WLU2dR5Hm8EPyq8jcKZsxGfDh1OpUUiKhKh9bz5+K8nAod78igu3Io1vrxIUvDb9vENtIkMlLXfPVZPjGCT8HRdRFLsEPi63gJ4h2xeMVpolN8lluGsQYv8SFrvxl3TIQdirQXzvocOCGOq2+WmbExKi6a/hEgIw+GOugY4kAKz3PsX1qpr5UMnYPpDqJogS+GeWqtsVvMPw70fjsyg9zwrE1TM2c+Ao+xsBjVtW6GGEal1bTw8/IYwaI9Knk2jm9uZdDwME2MDN4petYyNscq7IrowmWvoFXY7oZwthrK7ROXkqM63v5DXcgJUdEOQt+7HsQn9ZfPrTAe5uSD0aJgcW/yc4lPHHdwdH62Ndkb0zmvJdFXwPqfaWbfgKW4EPnierF5Km4chs777WnT9fvYP/tpZehPFvV+7/Bwb1/OCuMoA6+NZvCLDNu92O7BXpbi9enW6e2/LNUm44R/KCxS0Hmvz+oa36waVdiN13do9xdgtFoOrJaEgxbX5fKezdc2rSo5rlecCCzWTjYZC2oCqWP5PeJifSfOIC2FmhL1zcDqevMN+T6bsTcXTQ++DV5Z6YN5aFdcvujzabn2E1Hdytppdg5TrBFHUYQF9Xy3BsZaZ305vWIsrPfChvb97YO8ONUecWUeMed0tzRJfgvBqvoLRtxd2A==
+sidebar_class_name: "get api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List latest dataset versions"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/workspaces/{workspaceId}/datasets/versions"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Lists the latest version of each dataset associated with the given `workspaceId`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workspaceId","in":"path","description":"Workspace numeric identifier","required":true,"schema":{"type":"integer","format":"int64"}},{"name":"mimeType","in":"query","schema":{"type":"string","nullable":true}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"versions":{"type":"array","items":{"type":"object","properties":{"datasetId":{"type":"string"},"datasetName":{"type":"string"},"datasetDescription":{"type":"string"},"hasHeader":{"type":"boolean"},"version":{"type":"integer","format":"int64"},"createdBy":{"required":["avatar","email","id","userName"],"type":"object","properties":{"id":{"type":"integer","format":"int64"},"userName":{"type":"string"},"email":{"type":"string"},"avatar":{"type":"string"}},"title":"UserInfo"},"lastUpdated":{"type":"string","format":"date-time"},"fileName":{"type":"string"},"mediaType":{"type":"string"},"workspaceId":{"type":"integer","format":"int64"},"url":{"type":"string"}},"title":"DatasetVersionDto"}}},"title":"ListDatasetVersionsResponse"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

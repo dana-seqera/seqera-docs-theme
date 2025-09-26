@@ -1,0 +1,71 @@
+---
+id: validate-action-name
+title: "Validate action name"
+description: "Confirms the validity of the given action name. Append `?name=<your_action_name>`."
+sidebar_label: "Validate action name"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVG1v0zAQ/iuWP5e2QDWJircOBpqQxsQGfEDT5iaX1ptje/alo4r637lzkrVbS+ELEp8S3z1399xrLVHNohz/kCpD7WyUFz2ZQ8yC9vyWY/nO2UKHMgqcg1goo3ONS+GK9J7pBVjR2AqrSuiLifdgc3H1hp+vXi5dFS4bwCVLXl/1ZU86D0Gx7DinEN/Yq0KYJNgJoQjiVaAfhMD0asm2BL1z4SZ6lQEZ9qRmgrcVhKV8TPt7BxS2KiHoTOgcLOpCQyBwzOZQKjmuJS49O9YWYZZUhQulwkZ0MJKrVe8+um2o7Qk7WZdCoGvqRZntihgxaDsj/1TyANFT9SGy/tlwxJ+Hjj9/Ek/EiROZI6IW5aonR8PhNu5Q5SIAkYtIQTs0wZT3Rmep6IPryNh6gxOb6AA5j0IJMaoZ8Ci0VN30GjL25wN3DnVDtAPuyIlMNRoWHYXgwpc2P9KsEvPnOzLsZkJYh0IZ4+6IT0K/2Ea/r5p0QICBknP8T7MlZYSsCrQ1aZAPQQUIkwrn9Lzg5tOUzx3vwQxSVMUqOWg3crA5Q62jM86kYbXp7p7YHNF3I8fvaQKRpPn50E349R0m9toWLpm3WZzBLfVCTE6Ptwa8VZ0ahbwoIkJY6AxiC+YWEHF2VgXTUonjwSAmu752BKIuaJMWrHBv1woisqB1b+I87R8c9Ics8y5iqVIH2zXs7sXm4XlMtF5Pw785YW2pEX7iwBtFN4G4ppzrtoXro0qJdU2kfs8pIdbW9VRF+BrMasXi5qDwiOQ6qqnh8SyUibAnsz9cuZ0cb2C5dUiJXsVIycfu78P//trtidx2ax3ygh9Bc8y0ElQhUDklwLVobCZZBh43rLb2+8EifTw6J6x6uBSPliB5b1XKLjd8U18S4tzdgKXedMSR3xSIdvoX3ER87Q==
+sidebar_class_name: "get api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Validate action name"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/actions/validate"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Confirms the validity of the given action name. Append `?name=<your_action_name>`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workspaceId","in":"query","description":"Workspace numeric identifier","schema":{"type":"integer","format":"int64"}},{"name":"name","in":"query","description":"Action name to validate","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"OK - No content"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"},"409":{"description":"Duplicate element","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: explore-data-link-1
+title: "Explore data-link path"
+description: "Retrieves the content of the data-link associated with the given `dataLinkId`, at the given `path`."
+sidebar_label: "Explore data-link path"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNV81u4zYQfhWCpxZQ7exukINPzW6cwmiwazgpegiMhpZGNhNJVEjKTioI6EP0CfsknaFkSbZVxTHQoqdE5Ay/b/7HObdiafjongfCih8imTwZPvd4AMbXMrVSJXzEZ2C1hDUYZlfAfJVYSCxTofusFZkwRvlSWAjYRtqVu13KNSTsgYRuUGYSPHhM2PZVKuzqYcA9rlLQghAnAWKOX9JIabiqFH/7gBKp0CIGC5oY5zzBD5Rs3kYRSXzpSb5vxFXN06A1yZLJAK2QoQSNshqeM6kBka3OwOPGX0Es+Cjn9jUllFKJF4VXA1cw/wz5pfJUdXkKxkbpJ5MKHxrrnjPQrwdYv24FWZLFoKW/a98BlkRqS3cVKh0LWx5dnO+g+8iWHhGReQv/SyPa6eBjjDUgtL/qx5lqCOULK0UpB5v8qxLzSLAEXuxULOFOPUHSj+lEWGYwsa1iIVi/TG56AoO7BOIhLcTmSGzSuZW/Qz/s1yxegK7fJmwNNtMJw0pxuAM2CZmKY2mx6LCwWAChyCLLYvEi4yxmaxFlwKSpFCEYHJ8Lnz4i5zmlrUlVYsCQxsezM/qzS/Tbz6i69T7eijSNpO9qefhoSCQ/BFWLR/ApWKmmyreyBFBaLmUioinVzKETvUrPtO6E1oK8V0bgTYTydv9ljwMWDnXC6283V+MZHlxPbsbUDK20EVQdxDUaxLkjZWRTBrSDpqHwHlNuHo9lDHedpDBnOtHdxW4CH6VbNaRZFVGUIanzrph+FsEM+xUY+57YNi3unsdgDNJzHuwNyFaw14Sx1kofEP/UkYzbMcISZZmIIrVBPk76/FD6q7LXKksC9tcff7K62TKlWav3uZdCEvPY5XTCAmnEIsJugLF0jaBW9Eiz6Ui13v/Vh5So4Gda2lc3Uj9jWwV9mVHt3c+p+nHerhQN5CU4VFeWfNisC8O8GcDFcKHVxsAwJ7mCN6/fknkl1TZGzXZlbbptTfS9cEJ4Uv5zvS2ax411JskkVE69Mu0WnjHsFJ2DNlpdTSNhqfZwdOi19HGZKYUpLsJ3ccl0VFExo+HQOL2BVNQbYiEjV7Oh+rG5QCJr3EZKnA+Di4vBGZ2lythYuLBWDb/aZlqp0bUw5E2S/Ec7V+V9i61kmEYChxHSd27Iq1DvbIYeH+1sW2W06dgJY7qs0HRSyvOFMPCLjoqCjssBRxm2rR0+CrGyoMcDb2w0ndSf4PVgaXIzEE85DeDj4d9aaHrw99emExkcter00KjXqRPx37X29PDY37ROpPNvrUM9zFt7WkN6Th9aEut3ZvR3s6q1f8/6f410UtpuO8lrm86Waqsu3+fWFqm93ysnsHCaxRzlViACtIUcVF5d+j6ktqV0MAV3xs1P4zuUFbtTYm8quNc7CWH7cRIu5Yqi5mddCiLBovgbniQrUQ==
+sidebar_class_name: "get api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Explore data-link path"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/data-links/{dataLinkId}/browse/{path}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves the content of the data-link associated with the given `dataLinkId`, at the given `path`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"dataLinkId","in":"path","description":"Data-link string identifier","required":true,"schema":{"type":"string"}},{"name":"path","in":"path","description":"Content path","required":true,"schema":{"type":"string"}},{"name":"workspaceId","in":"query","description":"Workspace numeric identifier","schema":{"type":"integer","format":"int64"}},{"name":"credentialsId","in":"query","description":"Credentials string identifier","schema":{"type":"string"}},{"name":"search","in":"query","description":"Prefix search of data-link content","schema":{"type":"string"}},{"name":"nextPageToken","in":"query","description":"Token used to fetch the next page of items","schema":{"type":"string"}},{"name":"pageSize","in":"query","description":"Number of items to return per page. If ommitted, a default maximum value is returned.","schema":{"type":"integer","format":"int32"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"originalPath":{"type":"string"},"objects":{"type":"array","items":{"type":"object","properties":{"type":{"type":"string","enum":["FOLDER","FILE"],"title":"DataLinkItemType"},"name":{"type":"string"},"size":{"type":"integer","format":"int64"},"mimeType":{"type":"string"}},"title":"DataLinkItem"}},"nextPageToken":{"type":"string"}},"title":"DataLinkContentResponse"}}}},"400":{"description":"BadRequest","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"},"404":{"description":"NotFound — workspace or credentials not found, API disabled for the workspace, or data-link not found","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

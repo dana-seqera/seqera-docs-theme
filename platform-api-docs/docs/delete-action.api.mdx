@@ -1,0 +1,71 @@
+---
+id: delete-action
+title: "Delete action"
+description: "Deletes the pipeline action identified by the given `actionId`."
+sidebar_label: "Delete action"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVMFu2zAM/RVBpw3IkmwreshpKZoBxYataDfsUASoYjOxWsVSJTpdYPjfR0p2nDRBhwE7JSKfyEfxPdcS1SrIyZ1UGWpbBjkfyBxC5rXjs5zISzCAEAQWIJx2YHQJIqGFzqFEvdSQi8U2IlZ6A6W4T/mr/H4oB9I68Cqdd/WmEUBJp7xaU8Azi1qWdCBQd58Amkk4hYV8ySzVEAG9Llc9F09AD0+V9kD90FcwkCErYK3kpJa4ddwgXZJNM9j1fLb+MTiVQd/2qQK/Per7qwOKslqD19lh76NeukRYxdTS+rXCFDo/o+5zphocPTwEvvFhfMY/h/2+fxHvxDcrMkuFSpTNQJ6Nx8e4C5ULHhwCUq8OTTDlnNFZXMHoITC23mPZv9WdXEMIagWsgpa8XTxAxvWc5z2iTkQ74KkXlajRcGjmvfU37XyUaSLzjycm7BQiSotCGWOfiQ/DA2SV17iN4rgA5cFPK9LC5G7Oj0fKKSyrKo+qinrirBy1eh7VnZQa2Ve75eHTIPs1d7MUiK7bJJ8XEUSR9Odzt8aHZ4wsdbm08Xo7+C080UBien11JJ42dW0UshpEAL/RGfkrgXlrxJiLVd60VMJkNArx3lBbAtHitIkqWtpPfYKIbMhHqc/74fn5cMwxZwOuVVx6q/RkwdbELxnWvXL+g/fbB0X4jSNnFLmKGMXJ6nZV/adnICc739NuC+LN6bpeqAA/vWkaDidPshxyHdTCsHCXygR4ZY6/OPYkyUfYHn0UNspUjJSsvY3ymvv/I5c3N63f3opXPmAnKbVBVW73uXRUd2/XzAlbgMqpEnNL6WmWgcO9i0dfhQNDXc6+zn7MCK4OrfHCCrHBSV60toj4YR+hbJodTeQzc2yaP7WcO08=
+sidebar_class_name: "delete api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete action"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/actions/{actionId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes the pipeline action identified by the given `actionId`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"actionId","in":"path","description":"Action string identifier","required":true,"schema":{"type":"string"}},{"name":"workspaceId","in":"query","description":"Workspace numeric identifier","schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"OK - No content"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

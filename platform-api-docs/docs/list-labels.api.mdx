@@ -1,0 +1,71 @@
+---
+id: list-labels
+title: "List labels"
+description: "Lists all available labels in a user context. Append `?workspaceId` to list labels in a workspace context."
+sidebar_label: "List labels"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vt1P2zAQ/1csPxfKBuKBl40NmNCQhgbTHhAS1+TSGpzYsx2gi/jfd+ek6VcaOibtqY3v5/vd+T4rGWDs5dGN1DBC7eXtQKboE6dsUKaQR/JC+eAFaC3gERShNIoaK1QhQJQenUhMEfA57Ipja7FIxd2HJ+MevIUEz9M7EYzQpGbpXgtoL8uBNBYdMPF52lBf1GYNpAUHOQZ0bG0lC/ogyAINYRQb/KtEN5Wrbvxs6YoyR6cSoVIsgsoUOgL7ZII5yKNKhqllxYpsGkdRZlwOoT46PJAvL4OWPYfnftZLGKsiOiQIKxz6Uge/Pd/++yU+k2Uew9aULfxtbB7BJZN+tjOlKSSihoo2Rl2cPjhVjJcYoqRXfwy/aHCbVA4kUlA5ib3KrWYovbQpXcJ/KXU5q593GLTzCI7J/SvooILGGf81sy3arfwJZkCh3Mb4tIaKTMO4y4mRMRqhIILbaIk1hWf7Kvl+b49/lpV++0pKYskUgaVgrVZJDPjw3jOkWucwo3tM2FrruMSCqgmamp/jwDlgP1TA3L9+X6VbVcygebe1VBjIR9Blt6SNScdLDRYisEk8JU6VbBKfk7HOGg0B025MSqLPDlcAbca1PjJuJ6g8Zshy3pyMToKpj00AfaV+45YdZq6nbYHfm8wgMQMOunLjE6TUYygZffibJOEryrGfN5JKw8MYYw30xn4G7Crw1vxT54xbs3y/I6tnjV8UJvC0MU9kD8M9JqVTYRq7/ifqM+iOyzChz1suGGo3E8PDYhw7nQUWyaGejY3Z9Sv2trZ8UUlr/CQEO6vOmAkRRCf1n7NZiO6fQjRLFZmJ1xtPr/AXeSCOL8/X2kAjuqRk40hTs3SPKkHfgDlMkMQwlU43pvij4dDHe7vKcIPLafbGDMnMx7mAK4gmYs3zbvfwcHePz6zxIYcY5aZjXczH76p91TxR/u+wb16eP4dWg4plF5+gauK4uJVMyCc+qaoRePzh9MsLH9edl3MjVZ7tpVzIQHvs8fKVXaDTrgecrq0bTfOSkkfD9vQbl4Ie4nrT+HfCdiXo4Woxb6TbvBP0kLbLxhtJlxaFHp4G8U8sKxO9h21xUZhT3vKHU8wZ2xglN0JKL8RpXF88ThK0i7fWOvhS8/tyes27y3JLW2lhUftszhfTBd1UUhFxbR6woLJq34q/iYja9h+UFCkc
+sidebar_class_name: "get api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List labels"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/labels"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists all available labels in a user context. Append `?workspaceId` to list labels in a workspace context.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"workspaceId","in":"query","description":"Workspace numeric identifier","schema":{"type":"integer","format":"int64"}},{"name":"max","in":"query","description":"Pagination max results","schema":{"type":"integer","format":"int32"}},{"name":"offset","in":"query","description":"Pagination offset","schema":{"type":"integer","format":"int32"}},{"name":"search","in":"query","description":"Filter search parameter","schema":{"type":"string"}},{"name":"type","in":"query","description":"Label type","schema":{"type":"string","enum":["simple","resource","all"],"x-enum-varnames":["simple","resource","all"],"title":"LabelType"}},{"name":"isDefault","in":"query","description":"Label default flag","schema":{"type":"boolean"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"labels":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"value":{"type":"string"},"resource":{"type":"boolean"},"isDefault":{"type":"boolean"},"isDynamic":{"type":"boolean"},"isInterpolated":{"type":"boolean"},"dateCreated":{"type":"string","format":"date-time"}},"title":"LabelDbDto"}},"totalSize":{"type":"integer","format":"int64"}},"title":"ListLabelsResponse"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: list-compute-envs
+title: "List compute environments"
+description: "Lists all available compute environments in a user context. Append `?workspaceId` to list compute environments in a workspace context, and `?status` to filter by compute environment status."
+sidebar_label: "List compute environments"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVkuP2zYQ/isEz669bYM9+NJqEycQauwG3k16CBYILY3t2aVIhaS8NQz998xQ8lvrOAV66EkS58GZ+b6Z0VoGNfdy+EVmtiirAL+AWXr52JM5+MxhGdAaOZRj9MELpbVQS4VaTTWI1kKQBTprCjCkgkYoUXlwJDYB/gl9kZQlmFx8/ePFumdfqgzS/KsIVmhyesbLVn3jqidU9OODCpWPLmaoA901XXX5EY1iX/akLcEpziXN22zeNvojTrcnS+VUAeSKa7GWhj5Ir7EnMXINvlXgVvK4Mu8vjMBnCyiUHK5lWJWNc4dmThIwVcEIvJ2Mkof09gMdJZ+TdJzcjEf0PppM7iajd/SW3n5Oxim/Xaz6WNe9bTp79T+f09/bylNo4DATmFM2OENwfZHOhC0wBMh7EUJ/KRO6qoAkmoMj0cy6QoXm6PqNrGsioQNfWuPBs8VvV1f8OAz17i8yjReYwFJVlhqzCPXgybPK+vRSO32CLDDsjokRsLkg26PETlk5p7hEGKDwP3aC+SnGda+FoENQahU49U5hS8AO0jhQ+Z3RKzkMroJ/QSKqbsCg2emuFfr3zYV0dQHeq3l3zFr58MlDR6Z7MOaKpklASpuzdFgoYtrOYGqtBmVYuOXl7WtFWqLHKWoMq04xO3iHrlOWOYjcVdqn3dA4mGNDlCNRvSvR0cSYtLzsj0ygrOoLVFmJtN50kfhG5cIB9aIPP8NmNkHHMHzZwsWwnuXn67ju5TByzrqTyH/vaL/NXBXGBt4P9oXiYXUPWeUiYDRPb0A5cEkVFvT5yJ1Nw3ZheRbPIcaoWCQHB1to5+Sec27i33e1TWERQrmZLpFcUYlOmpf3G04+vYQYHJqZjeZtvvfwjfIQycf0ZBa2oo9tmwoaaEvMwLfKDJbKIliV020ofjgY+GjXR8sTvqCdGSfbzP65EzCxaeM09/zav77uX8VesT4UKmLdDu7xa4vyONr1jjz/+5XdQsteBjQkMY6KWON1S5fTn5YFlY7P1+up8vDJ6brm42bLMRFz9FwIIt6MBgKcKd+le70zzGdY7f8+LJWuWEnyMr48hP9uDZ8J+vAnYRf5I3845NBjD1OxaQVRk3FZG9Mky6AMe1Yn4+ug8z+MHkhXHXbyUedG75tFbFZ7vgniqPFgn8EQzJv4A3/TRTSzvgPxWMK+
+sidebar_class_name: "get api-method"
+info_path: platform-api-docs/docs/seqera-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List compute environments"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/compute-envs"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists all available compute environments in a user context. Append `?workspaceId` to list compute environments in a workspace context, and `?status` to filter by compute environment status.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"status","in":"query","description":"Filter by compute environment status.","schema":{"type":"string","enum":["CREATING","AVAILABLE","ERRORED","INVALID","CREATING","AVAILABLE","ERRORED","INVALID"]}},{"name":"workspaceId","in":"query","description":"Workspace numeric identifier. If omitted, lists compute environments in a user context.","schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"computeEnvs":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"platform":{"type":"string"},"status":{"type":"string","readOnly":true,"enum":["CREATING","AVAILABLE","ERRORED","INVALID"],"title":"ComputeEnv.Status"},"message":{"type":"string"},"lastUsed":{"type":"string","format":"date-time"},"primary":{"type":"boolean"},"workspaceName":{"type":"string"},"visibility":{"type":"string"},"workDir":{"type":"string"},"credentialsId":{"type":"string"},"region":{"type":"string"}},"title":"ListComputeEnvsResponse.Entry"}}},"title":"ListComputeEnvsResponse"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"required":["message"],"type":"object","properties":{"message":{"type":"string"}},"title":"ErrorResponse"}}}},"403":{"description":"Operation not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      
