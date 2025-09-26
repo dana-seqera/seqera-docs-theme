@@ -15,7 +15,11 @@
     "typecheck": "tsc",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "format:staged": "prettier --write"
+    "format:staged": "prettier --write",
+    "lint:prose": "vale .",
+    "lint:prose:docs": "vale docs/ --ext=.md,.mdx",
+    "lint:prose:fix": "vale --output=line .",
+    "lint:all": "npm run format:check && npm run lint:prose"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.1",
