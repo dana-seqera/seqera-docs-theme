@@ -1,8 +1,8 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import type * as Plugin from "@docusaurus/types/src/plugin";
-import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
+import type * as Plugin from '@docusaurus/types/src/plugin';
+import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -32,19 +32,19 @@ const config: Config = {
     locales: ['en'],
   },
 
-    // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-     v4: {
+    v4: {
       useCssCascadeLayers: true,
     },
-       experimental_faster: {
-        swcJsLoader: false,
-        swcJsMinimizer: false,
-        swcHtmlMinimizer: false,
-        lightningCssMinimizer: false,
-        rspackBundler: true,
-        mdxCrossCompilerCache: false,
-      },
+    experimental_faster: {
+      swcJsLoader: false,
+      swcJsMinimizer: false,
+      swcHtmlMinimizer: false,
+      lightningCssMinimizer: false,
+      rspackBundler: true,
+      mdxCrossCompilerCache: false,
+    },
   },
 
   presets: [
@@ -53,7 +53,14 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
+          docItemComponent: '@theme/ApiItem', // Derived from docusaurus-theme-openapi
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-math'),
+            require('docusaurus-remark-plugin-tab-blocks'),
+            require('remark-yaml-to-table'),
+          ],
+          rehypePlugins: [require('rehype-katex')],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -100,7 +107,7 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -157,28 +164,35 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    stylesheets: [
+      {
+        href: 'https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css',
+        type: 'text/css',
+        integrity: 'sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn',
+        crossorigin: 'anonymous',
+      },
+    ],
   } satisfies Preset.ThemeConfig,
   plugins: [
     [
       'docusaurus-plugin-openapi-docs',
       {
-        id: "api", 
-        docsPluginId: "classic", 
+        id: 'api',
+        docsPluginId: 'classic',
         config: {
           petstore: {
-            specPath: "examples/petstore.yaml",
-            outputDir: "docs/petstore",
+            specPath: 'examples/petstore.yaml',
+            outputDir: 'docs/petstore',
             sidebarOptions: {
-              groupPathsBy: "tag",
+              groupPathsBy: 'tag',
             },
           } satisfies OpenApiPlugin.Options,
-        }
+        },
       },
     ],
-    "./src/plugins/tailwind-config.js"
+    './src/plugins/tailwind-config.js',
   ],
-    themes: ["docusaurus-theme-openapi-docs"],
-
+  themes: ['docusaurus-theme-openapi-docs'],
 };
 
 export default config;
