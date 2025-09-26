@@ -67,19 +67,22 @@ const config: Config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
-          showReadingTime: true,
+          blogTitle: 'Seqera Changelog',
+          blogDescription: 'Blog',
+          blogSidebarCount: 5000,
+          blogSidebarTitle: 'Changelog',
+          path: 'changelog',
+          routeBasePath: '/changelog',
+          //processBlogPosts: () => ({}),
+          include: ['**/*.{md,mdx}'],
+          showReadingTime: false,
           feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
+            type: 'all', // 'rss', 'atom', or both
+            title: 'Seqera Changelog',
+            description: 'Stay updated with our blog posts!',
+            copyright: `Copyright © ${new Date().getFullYear()} Seqera`,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onUntruncatedBlogPosts: 'ignore',
         },
         theme: {
           customCss: './src/css/main.css',
