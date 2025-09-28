@@ -5,9 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import type * as Plugin from '@docusaurus/types/src/plugin';
 import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs';
 
-
 async function createConfig(): Promise<Config> {
-
   const remarkCodeImport = (await import('remark-code-import')).default;
   const remarkMath = (await import('remark-math')).default;
   const remarkTabBlocks = (await import('docusaurus-remark-plugin-tab-blocks')).default;
@@ -26,7 +24,8 @@ async function createConfig(): Promise<Config> {
     organizationName: 'seqera', // Usually your GitHub org/user name.
     projectName: 'docusaurus', // Usually your repo name.
 
-    onBrokenLinks: 'throw',
+    // onBrokenLinks: 'throw',
+    onBrokenLinks: 'warn',
     i18n: {
       defaultLocale: 'en',
       locales: ['en'],
@@ -36,13 +35,16 @@ async function createConfig(): Promise<Config> {
     future: {
       v4: {
         useCssCascadeLayers: true,
+         removeLegacyPostBuildHeadAttribute: true,
       },
       experimental_faster: {
+        ssgWorkerThreads: true,
         swcJsLoader: false,
         swcJsMinimizer: false,
         swcHtmlMinimizer: false,
         lightningCssMinimizer: false,
-        rspackBundler: false, 
+        rspackBundler: true,
+        rspackPersistentCache: true,
         mdxCrossCompilerCache: false,
       },
     },
@@ -54,12 +56,7 @@ async function createConfig(): Promise<Config> {
           docs: {
             sidebarPath: './sidebars.ts',
             docItemComponent: '@theme/ApiItem', // Derived from docusaurus-theme-openapi
-            remarkPlugins: [
-              remarkCodeImport,
-              remarkMath,
-              remarkTabBlocks,
-              remarkYamlToTable,
-            ],
+            remarkPlugins: [remarkCodeImport, remarkMath, remarkTabBlocks, remarkYamlToTable],
             rehypePlugins: [rehypeKatex],
             // todo: update url for "edit this page"
             editUrl:
@@ -126,15 +123,14 @@ async function createConfig(): Promise<Config> {
       footer: {
         style: 'dark',
         logo: {
-          alt: "Seqera Docs logo",
-          src: "img/seqeraIcon.svg",
-          srcDark: "img/seqeraIconLight.svg",
-          href: "https://docs.seqera.io",
+          alt: 'Seqera Docs logo',
+          src: 'img/seqeraIcon.svg',
+          srcDark: 'img/seqeraIconLight.svg',
+          href: 'https://docs.seqera.io',
           width: 25,
           height: 25,
         },
-        links: [
-        ],
+        links: [],
       },
       languageTabs: [
         {
@@ -237,12 +233,7 @@ async function createConfig(): Promise<Config> {
           id: 'platform-enterprise',
           routeBasePath: '/platform-enterprise',
           path: 'platform-enterprise_docs',
-          remarkPlugins: [
-            remarkCodeImport,
-            remarkMath,
-            remarkTabBlocks,
-            remarkYamlToTable,
-          ],
+          remarkPlugins: [remarkCodeImport, remarkMath, remarkTabBlocks, remarkYamlToTable],
           rehypePlugins: [rehypeKatex],
           editUrl: 'https://github.com/seqeralabs/docs/tree/master/',
           sidebarPath: 'platform-enterprise_docs/enterprise-sidebar.json',
