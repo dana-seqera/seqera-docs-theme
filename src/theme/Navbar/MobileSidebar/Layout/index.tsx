@@ -1,62 +1,111 @@
-import React, {version, type ReactNode} from 'react';
-import clsx from 'clsx';
-import {useNavbarSecondaryMenu} from '@docusaurus/theme-common/internal';
-import {ThemeClassNames} from '@docusaurus/theme-common';
-import type {Props} from '@theme/Navbar/MobileSidebar/Layout';
+import React, { useEffect, useState } from "react";
+import clsx from "clsx";
+import { useLocation } from "@docusaurus/router";
+import { useNavbarSecondaryMenu } from "@docusaurus/theme-common/internal";
+import SeqeraMenu from "../SeqeraMenu";
+import Caret from "./Caret.svg"
+import styles from "./styles.module.css";
 
-// TODO Docusaurus v4: remove temporary inert workaround
-//  See https://github.com/facebook/react/issues/17157
-//  See https://github.com/radix-ui/themes/pull/509
-function inertProps(inert: boolean) {
-  const isBeforeReact19 = parseInt(version!.split('.')[0]!, 10) < 19;
-  if (isBeforeReact19) {
-    return {inert: inert ? '' : undefined};
-  }
-  return {inert};
-}
-
-function NavbarMobileSidebarPanel({
-  children,
-  inert,
-}: {
-  children: ReactNode;
-  inert: boolean;
-}) {
+function Button({ onClick, children }) {
   return (
-    <div
-      className={clsx(
-        ThemeClassNames.layout.navbar.mobileSidebar.panel,
-        'navbar-sidebar__item menu',
-      )}
-      {...inertProps(inert)}>
+    <button
+      type="button"
+      className={clsx("flex flex-row items-center clean-btn navbar-sidebar__back", styles.button)}
+      onClick={onClick}
+    >
       {children}
-    </div>
+    </button>
   );
 }
 
-export default function NavbarMobileSidebarLayout({
-  header,
-  primaryMenu,
-  secondaryMenu,
-}: Props): ReactNode {
-  const {shown: secondaryMenuShown} = useNavbarSecondaryMenu();
+function NavButtons({ currentPanel, setPanel }) {
+
+  // manually add docs title to top of mobile menu
+  function formatPathname(pathname) {
+    const segments = pathname.split('/').filter(Boolean);
+    const first = segments[0];
+    if (!first) return 'Home';
+    let label = first.replace(/-/g, ' ');
+    // If the segment contains 'multiqc', capitalize 'QC'
+    if (/multiqc/i.test(label)) {
+      label = label.replace(/multiqc/i, 'MultiQC');
+    } 
+    if (/platform[-_\s]?api/i.test(pathname)) {
+      return "Platform API";
+    }
+    // Capitalize the first letter of each word (excluding the already fixed "QC")
+    label = label
+      .split(' ')
+      .map(word => {
+        if (word === 'QC') return word
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(' ');
+    return label;
+  }
+  const pageTitle = formatPathname(location.pathname);
+
   return (
-    <div
-      className={clsx(
-        ThemeClassNames.layout.navbar.mobileSidebar.container,
-        'navbar-sidebar',
-      )}>
+    <>
+      {currentPanel === 1 && (
+        <Button onClick={setPanel(2)}>Docs Menu <div className="caret ml-2"><Caret/></div></Button>
+      )}
+      {currentPanel === 2 && (
+        <>
+        <Button onClick={setPanel(1)}><div className={`${styles.caretRotate} mr-2`}><Caret/></div> Main Menu</Button>
+        <div className="px-3 mb-4 text-blu font-semibold">
+        {pageTitle} Docs
+        </div>
+      </>
+      )}
+    </>
+  );
+}
+
+export default function NavbarMobileSidebarLayout({ header, primaryMenu }) {
+  const level2 = useNavbarSecondaryMenu();
+  const [currentPanel, setCurrentPanel] = React.useState(level2.shown ? 2 : 2);
+  const [mainMenu, setMainMenu] = useState(false);
+
+  useEffect(() => {
+    setCurrentPanel(level2.shown ? 2 : 1);
+  }, [level2.shown]);
+
+  function setPanel(index) {
+    return () => {
+      if (index !== 2) level2.hide();
+      setCurrentPanel(index);
+    };
+  }
+
+    useEffect(() => {
+      if (location.pathname =='/') {
+        setMainMenu(false);
+      } else {
+        setMainMenu(true);
+      }
+    }, [location.pathname]);
+
+
+  return (
+    <div className="navbar-sidebar !w-full !ransform-none">
       {header}
       <div
-        className={clsx('navbar-sidebar__items', {
-          'navbar-sidebar__items--show-secondary': secondaryMenuShown,
-        })}>
-        <NavbarMobileSidebarPanel inert={secondaryMenuShown}>
-          {primaryMenu}
-        </NavbarMobileSidebarPanel>
-        <NavbarMobileSidebarPanel inert={!secondaryMenuShown}>
-          {secondaryMenu}
-        </NavbarMobileSidebarPanel>
+        className={clsx("navbar-sidebar__items", styles.panels, {
+          [styles.panel1Active]: currentPanel === 1,
+          [styles.panel2Active]: currentPanel === 2,
+        })}
+      >
+        <div className="navbar-sidebar__item menu mb-2">
+          <div className={`${!mainMenu && "hidden"}`}>
+            <NavButtons currentPanel={currentPanel} setPanel={setPanel} />
+          </div>
+          <SeqeraMenu />
+        </div>
+        <div className="navbar-sidebar__item menu mb-4">
+          <NavButtons currentPanel={currentPanel} setPanel={setPanel} />
+          {level2.content}
+        </div>
       </div>
     </div>
   );

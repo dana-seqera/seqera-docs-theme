@@ -6,7 +6,7 @@ export default function NavbarLogo(): ReactNode {
     <Logo
       className="navbar__brand"
       imageClassName="navbar__logo"
-      titleClassName="navbar__title text--truncate"
+      titleClassName="hidden"
     />
   );
 }

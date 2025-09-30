@@ -1,10 +1,21 @@
-@import "tailwindcss/theme.css" layer(theme);
+@import 'tailwindcss/theme.css' layer(theme);
+
+/* Import your custom styles AFTER Tailwind */
+@import url('./fonts/inter.css');
+@import url('./fonts/degular.css');
+@import url('./typography.css');
+@import url('./misc.css');
+@import url('./components/checklist.css');
+@import url('./components/box.css');
+@import url('./api.css');
+@import url('./theme-colors.css');
+
 
 
 /* We add the .tw-wrapper class to selectively enable Tailwind. We scope tailwind within a class to prevent a very common issue where Tailwind and Infima (Docusaurus styles) are incompatible  */
 @layer base {
   .tw-wrapper {
-    @import "tailwindcss/preflight.css" layer(base);
+    @import 'tailwindcss/preflight.css' layer(base);
   }
 }
 
@@ -18,7 +29,7 @@
   }
 }
 
-@import "tailwindcss/utilities.css" layer(utilities);
+@import 'tailwindcss/utilities.css' layer(utilities);
 
 /* Content paths */
 @source "src/**/*.jsx";
@@ -72,107 +83,109 @@
 @theme {
   /* Nextflow colors */
   --color-nextflow-50: #f0fdf9;
-  --color-nextflow-100: #E2F7F3;
-  --color-nextflow-200: #B6ECE2;
-  --color-nextflow-300: #86E0CE;
-  --color-nextflow-400: #56D3BA;
-  --color-nextflow-500: #31C9AC;
-  --color-nextflow-600: #0DC09D;
-  --color-nextflow-700: #0CAE8E;
-  --color-nextflow-800: #0A967B;
-  --color-nextflow-900: #087F68;
+  --color-nextflow-100: #e2f7f3;
+  --color-nextflow-200: #b6ece2;
+  --color-nextflow-300: #86e0ce;
+  --color-nextflow-400: #56d3ba;
+  --color-nextflow-500: #31c9ac;
+  --color-nextflow-600: #0dc09d;
+  --color-nextflow-700: #0cae8e;
+  --color-nextflow-800: #0a967b;
+  --color-nextflow-900: #087f68;
   --color-nextflow-950: #065647;
 
   /* Wave colors */
   --color-wave-50: #f0f9ff;
-  --color-wave-100: #E8F2FF;
-  --color-wave-200: #C5DFFE;
-  --color-wave-300: #9ECAFE;
-  --color-wave-400: #77B5FE;
-  --color-wave-500: #5AA5FD;
-  --color-wave-600: #3D95FD;
-  --color-wave-700: #3787E5;
-  --color-wave-800: #3074C5;
-  --color-wave-900: #2863A7;
-  --color-wave-950: #1B4372;
+  --color-wave-100: #e8f2ff;
+  --color-wave-200: #c5dffe;
+  --color-wave-300: #9ecafe;
+  --color-wave-400: #77b5fe;
+  --color-wave-500: #5aa5fd;
+  --color-wave-600: #3d95fd;
+  --color-wave-700: #3787e5;
+  --color-wave-800: #3074c5;
+  --color-wave-900: #2863a7;
+  --color-wave-950: #1b4372;
 
   /* Fusion colors */
   --color-fusion-50: #fef2f2;
-  --color-fusion-100: #FEEDEC;
-  --color-fusion-200: #FED2D0;
-  --color-fusion-300: #FDB4B1;
-  --color-fusion-400: #FC9592;
-  --color-fusion-500: #FB7F7A;
-  --color-fusion-600: #FA6863;
-  --color-fusion-700: #E25E5A;
-  --color-fusion-800: #C3514D;
-  --color-fusion-900: #A64541;
-  --color-fusion-950: #712F2C;
+  --color-fusion-100: #feedec;
+  --color-fusion-200: #fed2d0;
+  --color-fusion-300: #fdb4b1;
+  --color-fusion-400: #fc9592;
+  --color-fusion-500: #fb7f7a;
+  --color-fusion-600: #fa6863;
+  --color-fusion-700: #e25e5a;
+  --color-fusion-800: #c3514d;
+  --color-fusion-900: #a64541;
+  --color-fusion-950: #712f2c;
 
   /* MultiQC colors */
   --color-multiqc-50: #fefaf6;
-  --color-multiqc-100: #FDF0E9;
-  --color-multiqc-200: #FBD9C8;
-  --color-multiqc-300: #F8C0A3;
-  --color-multiqc-400: #F5A67E;
-  --color-multiqc-500: #F39362;
-  --color-multiqc-600: #F18046;
-  --color-multiqc-700: #DA743F;
-  --color-multiqc-800: #BC6437;
-  --color-multiqc-900: #A0552F;
-  --color-multiqc-950: #6C3A20;
+  --color-multiqc-100: #fdf0e9;
+  --color-multiqc-200: #fbd9c8;
+  --color-multiqc-300: #f8c0a3;
+  --color-multiqc-400: #f5a67e;
+  --color-multiqc-500: #f39362;
+  --color-multiqc-600: #f18046;
+  --color-multiqc-700: #da743f;
+  --color-multiqc-800: #bc6437;
+  --color-multiqc-900: #a0552f;
+  --color-multiqc-950: #6c3a20;
 
   /* Brand colors */
+  --color-brand: #160f26;
   --color-brand-50: #fafafa;
-  --color-brand-100: #F3F3F4;
-  --color-brand-200: #E8E7E9;
-  --color-brand-300: #D0CFD4;
-  --color-brand-400: #B9B7BE;
-  --color-brand-500: #A29FA8;
-  --color-brand-600: #8A8792;
-  --color-brand-700: #736F7D;
-  --color-brand-800: #5C5767;
-  --color-brand-900: #453F51;
-  --color-brand-950: #2D273C;
+  --color-brand-100: #f3f3f4;
+  --color-brand-200: #e8e7e9;
+  --color-brand-300: #d0cfd4;
+  --color-brand-400: #b9b7be;
+  --color-brand-500: #a29fa8;
+  --color-brand-600: #8a8792;
+  --color-brand-700: #736f7d;
+  --color-brand-800: #5c5767;
+  --color-brand-900: #453f51;
+  --color-brand-950: #2d273c;
 
   /* Gray colors */
   --color-gray-50: #fafafa;
-  --color-gray-100: #F7F7F7;
-  --color-gray-200: #EAEBEB;
-  --color-gray-300: #DDDEDE;
-  --color-gray-400: #CFD0D1;
-  --color-gray-500: #C4C6C7;
-  --color-gray-600: #BABCBD;
-  --color-gray-700: #A8AAAB;
+  --color-gray-100: #f7f7f7;
+  --color-gray-200: #eaebeb;
+  --color-gray-300: #dddede;
+  --color-gray-400: #cfd0d1;
+  --color-gray-500: #c4c6c7;
+  --color-gray-600: #babcbd;
+  --color-gray-700: #a8aaab;
   --color-gray-800: #919393;
-  --color-gray-900: #7B7B7B;
+  --color-gray-900: #7b7b7b;
   --color-gray-950: #545555;
 
   /* Product colors */
   --color-product-50: #faf9fc;
-  --color-product-100: #EAE8F1;
-  --color-product-200: #CBC6DD;
-  --color-product-300: #A9A1C6;
-  --color-product-400: #867BAF;
-  --color-product-500: #6C5E9D;
-  --color-product-600: #52428C;
-  --color-product-700: #4A3C7F;
-  --color-product-800: #40346D;
-  --color-product-900: #362C5D;
-  --color-product-950: #251E3F;
+  --color-product-100: #eae8f1;
+  --color-product-200: #cbc6dd;
+  --color-product-300: #a9a1c6;
+  --color-product-400: #867baf;
+  --color-product-500: #6c5e9d;
+  --color-product-600: #52428c;
+  --color-product-700: #4a3c7f;
+  --color-product-800: #40346d;
+  --color-product-900: #362c5d;
+  --color-product-950: #251e3f;
 
   /* Blu colors */
+  --color-blu: #4256e7;
   --color-blu-50: #f0f4fe;
-  --color-blu-100: #E8EBFC;
-  --color-blu-200: #C6CCF8;
-  --color-blu-300: #A1ABF3;
-  --color-blu-400: #7B89EE;
-  --color-blu-500: #5E6FEB;
-  --color-blu-600: #4256E7;
-  --color-blu-700: #3C4ED1;
-  --color-blu-800: #3443B4;
-  --color-blu-900: #2C3999;
-  --color-blu-950: #1E2768;
+  --color-blu-100: #e8ebfc;
+  --color-blu-200: #c6ccf8;
+  --color-blu-300: #a1abf3;
+  --color-blu-400: #7b89ee;
+  --color-blu-500: #5e6feb;
+  --color-blu-600: #4256e7;
+  --color-blu-700: #3c4ed1;
+  --color-blu-800: #3443b4;
+  --color-blu-900: #2c3999;
+  --color-blu-950: #1e2768;
 }
 
 /* Border radius */
@@ -185,7 +198,7 @@
 /* Shadows */
 @theme {
   --shadow-default: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 2px 21px 11px rgba(0,0,0,0.05);
+  --shadow-xl: 0 2px 21px 11px rgba(0, 0, 0, 0.05);
   --shadow-hover: 0 0 0 1px rgba(0, 0, 0, 0.65);
 }
 
@@ -483,31 +496,57 @@
   z-index: var(--z-index-sidebar);
 }
 
-/* Import your custom styles AFTER Tailwind */
-@import url('./fonts/inter.css');
-@import url('./fonts/degular.css');
-@import url('./typography.css');
 
 /* Docusaurus-specific styles */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: var(--color-brand);
+  --ifm-color-primary-dark: var(--color-blu-800);
+  --ifm-color-primary-darker: var(--color-blu-700);
+  --ifm-color-primary-darkest: var(--color-blu-600);
+  --ifm-color-primary-light: var(--color-blu-500);
+  --ifm-color-primary-lighter: var(--color-blu-400);
+  --ifm-color-primary-lightest: var(--color-blu-300);
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: var(--color-blu-300);
+  --ifm-color-primary-dark: var(--color-blu-700);
+  --ifm-color-primary-darker: var(--color-blu-600);
+  --ifm-color-primary-darkest: var(--color-blu-500);
+  --ifm-color-primary-light: var(--color-blu-400);
+  --ifm-color-primary-lighter: var(--color-blu-300);
+  --ifm-color-primary-lightest: var(--color-blu-200);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ifm-list-margin: 0;
+  --ifm-list-left-padding: 0;
+}
+
+
+.navbar-sidebar {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(
+    --ifm-navbar-background-color
+  ); /* Use your site's navbar color */
+  position: fixed;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* When sidebar is open (controlled by Docusaurus via class on <html>) */
+.navbar-sidebar--show > .navbar-sidebar {
+  width: 100%;
+  height: 100vh; /* Expand height */
+  visibility: visible;
+  opacity: 1;
+  overflow-y: scroll;
 }
