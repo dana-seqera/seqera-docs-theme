@@ -1,107 +1,57 @@
-import React, { useEffect } from "react";
-import clsx from "clsx";
-import { useThemeConfig } from "@docusaurus/theme-common";
+import React, {type ComponentProps, type ReactNode} from 'react';
+import clsx from 'clsx';
+import {ThemeClassNames, useThemeConfig} from '@docusaurus/theme-common';
 import {
   useHideableNavbar,
   useNavbarMobileSidebar,
-} from "@docusaurus/theme-common/internal";
-import { translate } from "@docusaurus/Translate";
-import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
-import Link from "@docusaurus/Link";
-import { useLocation } from "@docusaurus/router";
+} from '@docusaurus/theme-common/internal';
+import {translate} from '@docusaurus/Translate';
+import NavbarMobileSidebar from '@theme/Navbar/MobileSidebar';
+import type {Props} from '@theme/Navbar/Layout';
 
-import SeqeraHeader from "./SeqeraHeader";
-import styles from "./styles.module.css";
-import custom from "./styles.header.module.css";
-import useMediaQuery from "./SeqeraHeader/hooks/useMediaQuery";
-import { useColorMode } from "@docusaurus/theme-common";
-import Sun from "./SeqeraHeader/HeaderDesktop/NavItems/images/SunIcon.svg";
-import Moon from "./SeqeraHeader/HeaderDesktop/NavItems/images/MoonIcon.svg";
+import styles from './styles.module.css';
 
-{
-  /* Desktop nav */
-}
-function Container({ children, isMobile }) {
-  if (isMobile) return children;
+function NavbarBackdrop(props: ComponentProps<'div'>) {
   return (
-    <div className={custom.siteHeader}>
-      <div className={custom.seqeraHeader}>
-        <SeqeraHeader theme="dark" />
-      </div>
-      {/* Navbar normally goes here.
-      Docusaurus expects a classname, so we have a dummy element
-      with zero dimensions and display:none in main.css.
-      See https://github.com/facebook/docusaurus/issues/7505 
-
-      Note - navbar is used for mobile styles, so CSS
-      only hides it on bigger screens.
-      */}
-      <div className="navbar" />
-    </div>
+    <div
+      role="presentation"
+      {...props}
+      className={clsx('navbar-sidebar__backdrop', props.className)}
+    />
   );
 }
 
-{
-  /* Mobile nav */
-}
-export default function NavbarLayout({ children }) {
+export default function NavbarLayout({children}: Props): ReactNode {
   const {
-    navbar: { hideOnScroll, style },
+    navbar: {hideOnScroll, style},
   } = useThemeConfig();
   const mobileSidebar = useNavbarMobileSidebar();
-  const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
-  const isMobile = useMediaQuery("(max-width: 995px)");
-  const location = useLocation();
-  const isHome = location.pathname === "/";
-
-  const { colorMode, setColorMode } = useColorMode();
-
+  const {navbarRef, isNavbarVisible} = useHideableNavbar(hideOnScroll);
   return (
-    <Container isMobile={isMobile}>
-      <nav
-        ref={navbarRef}
-        aria-label={translate({
-          id: "theme.NavBar.navAriaLabel",
-          message: "Main",
-          description: "The ARIA label for the main navigation",
-        })}
-        className={clsx(
-          "navbar",
-          "navbar--fixed-top",
-          hideOnScroll && [
-            styles.navbarHideable,
-            !isNavbarVisible && styles.navbarHidden,
-          ],
-          {
-            "navbar--dark": style === "dark",
-            "navbar--primary": style === "primary",
-            "navbar-sidebar--show": mobileSidebar.shown,
-          },
-        )}
-      >
-        <Link
-          to="/"
-          className={clsx("navbar__item navbar__link -ml-3", custom.logo, {
-            "navbar__link--active": isHome,
-          })}
-        >
-          Home
-        </Link>
-        {children}
-
-        <button
-          onClick={() => setColorMode(colorMode === "dark" ? "light" : "dark")}
-          aria-label="Toggle Light or Dark Mode"
-          className="flex flex-row mr-7"
-        >
-          <span className="">
-            {" "}
-            {colorMode === "light" ? <Sun size={50} /> : <Moon size={24} />}
-          </span>
-        </button>
-    
-        <NavbarMobileSidebar />
-      </nav>
-    </Container>
+    <nav
+      ref={navbarRef}
+      aria-label={translate({
+        id: 'theme.NavBar.navAriaLabel',
+        message: 'Main',
+        description: 'The ARIA label for the main navigation',
+      })}
+      className={clsx(
+        ThemeClassNames.layout.navbar.container,
+        'navbar',
+        'navbar--fixed-top',
+        hideOnScroll && [
+          styles.navbarHideable,
+          !isNavbarVisible && styles.navbarHidden,
+        ],
+        {
+          'navbar--dark': style === 'dark',
+          'navbar--primary': style === 'primary',
+          'navbar-sidebar--show': mobileSidebar.shown,
+        },
+      )}>
+      {children}
+      <NavbarBackdrop onClick={mobileSidebar.toggle} />
+      <NavbarMobileSidebar />
+    </nav>
   );
 }
